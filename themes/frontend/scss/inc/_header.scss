@@ -1,0 +1,37 @@
+header{
+    &.header{
+        .navbar{
+            color: $heading-color;
+            .navbar-holder{
+                width: 90%;
+                margin: 0 auto;
+                ul{
+                    &.nav-menu{
+                        li{
+                            &.nav-item{
+                                display: inline-block;
+                                a{
+                                    width: 100%;
+                                    padding-top: .25rem;
+                                    padding-bottom: .25rem;
+                                    margin-right: 2rem;
+                                    font-size: 1.2rem;  
+                                }
+                            }
+                        }
+                        &.account-menu{
+                            li:last-of-type{
+                                background: $primary-color;
+                                a{
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                   
+                }
+            }
+        }        
+        
+    }
+}

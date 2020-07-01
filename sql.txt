@@ -1,0 +1,5 @@
+INSERT INTO `tbl_custom_fields` (`id`, `title`, `slug`, `fields`) VALUES
+(1, 'Custom Field', 'custom-field', 'a:3:{s:5:"title";a:3:{i:0;s:5:"title";i:1;s:4:"slug";i:2;s:5:"field";}s:5:"field";a:3:{i:0;s:4:"text";i:1;s:4:"text";i:2;s:8:"multiple";}s:7:"choices";a:3:{i:0;s:0:"";i:1;s:0:"";i:2;s:0:"";}}');
+
+
+a:3:{s:5:"title";a:3:{i:0;s:5:"title";i:1;s:4:"slug";i:2;s:5:"field";}s:5:"field";a:3:{i:0;s:4:"text";i:1;s:4:"text";i:2;s:8:"multiple";}s:7:"choices";a:3:{i:0;s:0:"";i:1;s:0:"";i:2;s:0:"";}}
