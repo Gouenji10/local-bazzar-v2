@@ -16,7 +16,7 @@
                     <div class="col-xl-10">
                         <form class="" method="POST" action="<?php echo base_url('ads/save_ads');?>" id="post_ads" enctype="multipart/form-data" >
                             <div id="ad-form-content">
-                                <!-- <div class="form-group row mb-5">                                                    
+                                <div class="form-group row mb-5">                                                    
                                     <div class="col-xl-6 category-select">
                                         <label class="form-control-label">Category<span class="text-danger ml-2">*</span></label>
                                         <?php 
@@ -31,16 +31,16 @@
                                             <option value="">Select Sub Category</option>
                                         </select>
                                     </div>
-                                </div> -->
+                                </div>
 
                                   
-                                <?php //apply_hook('basic_information');?>
+                                <?php apply_hook('basic_information');?>
                                 
-                                <?php //apply_hook('global_information');?>
+                                <?php apply_hook('global_information');?>
                                 
                                 <div class="sub-category-content"></div>
                                 
-                                <?php //apply_hook('general_information');?>
+                                <?php apply_hook('general_information');?>
 
                                 <div class="form-group row mb-5">
                                     <div class="col-xl-12 mb-3">
@@ -53,7 +53,7 @@
 
 
 
-                                <!-- <div class="form-group row mb-5">
+                                <div class="form-group row mb-5">
                                     <div class="col-xl-6 mb-3">
                                         <label class="form-control-label">Address<span class="text-danger ml-2">*</span></label>
                                         <input type="text" name="address" class="form-control" required>
@@ -93,7 +93,7 @@
 											Contact no cannot be empty.
 										 </div>
                                     </div>
-                                </div>    -->
+                                </div>
 
                                 <div class="form-group row mb-4 mt-5 text-right submit-row">
                                     <div class="col-xl-12">

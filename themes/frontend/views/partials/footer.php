@@ -231,7 +231,7 @@
 <?php echo js('vendors/owl-carousel/owl.carousel.min.js');?>
 <?php echo js('vendors/bootstrap-wizard/bootstrap.wizard.min.js');?>
 <?php echo js('components/wizard/form-wizard.min.js');?>
-<?php echo js('quill/quill.min.js');?>
+<?php echo js('ckeditor/ckeditor.js');?>
 <?php echo js('image-uploader/image-uploader.js');?>
 <?php echo js('vendors/app/app.min.js');?>
 <?php echo js('vendors/app/custom.js');?>
