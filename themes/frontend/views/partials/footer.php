@@ -224,16 +224,16 @@
     </div>
 </div>
 
-<?php echo js('vendors/base/jquery.min.js');?>
-<?php echo js('vendors/base/core.min.js');?>
-<?php echo js('vendors/nicescroll/nicescroll.min.js');?>
-<?php echo js('components/validation/validation.min.js');?>
-<?php echo js('vendors/owl-carousel/owl.carousel.min.js');?>
-<?php echo js('vendors/bootstrap-wizard/bootstrap.wizard.min.js');?>
-<?php echo js('components/wizard/form-wizard.min.js');?>
+<?php echo js('base/jquery.min.js');?>
+<?php echo js('base/core.min.js');?>
+<?php echo js('nicescroll/nicescroll.min.js');?>
+<?php echo js('validation/validation.min.js');?>
+<?php echo js('owl-carousel/owl.carousel.min.js');?>
+<?php echo js('bootstrap-wizard/bootstrap.wizard.min.js');?>
+<?php echo js('wizard/form-wizard.min.js');?>
 <?php echo js('ckeditor/ckeditor.js');?>
 <?php echo js('image-uploader/image-uploader.js');?>
-<?php echo js('vendors/app/app.min.js');?>
-<?php echo js('vendors/app/custom.js');?>
+<?php echo js('app/app.min.js');?>
+<?php echo js('app/custom.js');?>
 </body>
 </html>

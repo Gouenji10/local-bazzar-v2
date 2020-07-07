@@ -22,13 +22,27 @@ class Ads extends Front_Controller{
     }
 
     public function save_ads(){
-        if($this->input->post()){
+        if($this->input->post()){            
             if($_FILES){
                 $ads_image = $this->ads_image_upload($_FILES);
             }
             $insert_data=array(
-                
+                'title'=>$this->input->post('title'),
+                'category '=>$this->input->post('category'),
+                'sub_category'=>$this->input->post('sub_category'),
+                'created_at '=>date('Y-m-d'),
+                'expiry'=>$this->input->post('expiry'),
+                'price'=>$this->input->post('price'),
+                'zone'=>$this->input->post('zone'),
+                'district'=>$this->input->post('district'),
+                'city'=>$this->input->post('city'),
+                'additional_info'=>serialize(array(
+                    'content'=>$this->input->post(),
+                    'images'=>$ads_image,
+                )),
+                'status '=>'draft',               
             );
+            $this->ads_m->insert(config('tbl_ads'),$insert_data);
         }
         
     }

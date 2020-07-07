@@ -1,18 +1,6 @@
 var site_url = 'http://localhost/Codeigniter';
 $(document).ready(function(){
 
-	ClassicEditor
-		.create( document.querySelector( '.quill_editor' ), {
-			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-		} )
-		.then( editor => {
-			window.editor = editor;
-			editor.height = "20em";			
-		} )
-		.catch( err => {
-			console.error( err.stack );
-		} );
-
 	/*login form submit*/ 
 	$(document).on('submit','#login_form',function(){
 		$.post(site_url+'/auth/my_login',$('#login_form').serialize(),function(response){
@@ -130,16 +118,7 @@ $(document).ready(function(){
 	  	maxSize:50000000,
 	  	maxFiles:8,
 	});
-	// ad submit
-	// $(document).on('click','#ad_submit',function(){
-	// 	// here loader activation
-	// 	$.post(site_url+'/ads/save_ads',$('#post_ads').serialize(),function(response){
-	// 		console.log(response);
-	// 	});
 
-	// });
-
-	
 
 });
 

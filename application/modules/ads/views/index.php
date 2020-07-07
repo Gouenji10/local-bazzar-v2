@@ -14,7 +14,7 @@
             <div class="widget-body">
                 <div class="row flex-row justify-content-center">
                     <div class="col-xl-10">
-                        <form class="" method="POST" action="<?php echo base_url('ads/save_ads');?>" id="post_ads" enctype="multipart/form-data" >
+                        <form method="POST" action="<?php echo base_url('ads/save_ads');?>" enctype="multipart/form-data" >
                             <div id="ad-form-content">
                                 <div class="form-group row mb-5">                                                    
                                     <div class="col-xl-6 category-select">
