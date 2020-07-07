@@ -47,6 +47,14 @@ class Ads extends Front_Controller{
         
     }
 
+    public function single_ads($id){
+        $this->template
+		->title('Post Ads')
+		->set_layout('homepage')
+		->set('page','ads')
+		->build('single');
+    }
+
     public function ads_image_upload($files){
 
         $pathToUpload = './uploads/ads/' .date('Y').'/'.date('m').'/';

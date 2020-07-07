@@ -1,5 +1,31 @@
 header{
-    &.header{
+    &#main-header{
+        .top-bar{
+            background-color: $black;
+            padding: 10px 0;
+            color: $white;
+            .list-inline{
+                li{
+                    display: inline-block;
+                    i{
+                        padding: 0 6px;
+                    }
+                }
+            }
+            .header-top-right{
+                a{
+                    color: $white;
+                }
+            }
+            .roof-social{
+                margin-left: 6px;
+                a{
+                    color:$white;
+                    margin: 0 6px;
+                }
+            }
+        }
+
         .navbar{
             color: $heading-color;
             .navbar-holder{
@@ -15,17 +41,17 @@ header{
                                     padding-top: .25rem;
                                     padding-bottom: .25rem;
                                     margin-right: 2rem;
-                                    font-size: 1.2rem;  
+                                    font-size: 1rem;  
                                 }
                             }
-                        }
-                        &.account-menu{
-                            li:last-of-type{
-                                background: $primary-color;
-                                a{
-                                    color: $white;
-                                }
-                            }
+                        }            
+                    }
+                    &.account-menu{
+                        .btn{
+                            background-color: $primary-color;
+                            color: $white;
+                            border-radius: 6px;
+                            padding: 10px 6px;                            
                         }
                     }
                    

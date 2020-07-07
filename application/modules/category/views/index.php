@@ -1,6 +1,6 @@
 <div class="container">
         <div class="row">
-            <h1 class="text-center w-100">Popular Category</h1>
+            <h1 class="text-center w-100 title-with-bar">Popular Category</h1>
         </div>
         <div class="row mt-5">
             <?php foreach($categories as $category):?>

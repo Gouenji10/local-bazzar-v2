@@ -1,5 +1,30 @@
-<header class="header">
-    <nav class="navbar fixed-top">         
+<header class="header" id="main-header">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-5 col-xs-12">
+
+                    <ul class="list-inline">
+                        <li><i class="ion ion-speakerphone"></i> +0123 456 789</li>
+                        <li><i class="ion ion-email-unread"></i> support@gmail.com</li>
+                    </ul>
+
+                </div>
+                <div class="col-lg-5 col-md-7 col-xs-12">
+                    <div class="roof-social float-right">
+                        <a class="facebook" href="#"><i class="ion ion-social-facebook"></i></a>
+                        <a class="twitter" href="#"><i class="ion ion-social-twitter"></i></a>
+                        <a class="instagram" href="#"><i class="ion ion-social-instagram"></i></a>
+                    </div>
+                    <div class="header-top-right float-right">
+                        <a href="#" data-toggle="modal" data-target="#login"><i class="la la-unlock"></i> Log In</a> |
+                        <a href="#" data-toggle="modal" data-target="#register"><i class="la la-pencil"></i> Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar">         
         <!-- Begin Topbar -->
         <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
             <!-- Begin Logo -->
@@ -15,7 +40,7 @@
             </div>
             <!-- End Logo -->
             <!-- Begin Navbar Menu -->
-            <ul class="nav-menu pull-right">
+            <ul class="nav-menu">
                 <li class="nav-item"><a href="<?php echo base_url();?>">Home</a></li>
                 <li class="nav-item"><a href="#">Browse Ads</a></li>
                 <li class="nav-item"><a href="#">About</a></li>
@@ -23,9 +48,11 @@
                 <li class="nav-item"><a href="#">FAQ</a></li>           
             </ul>
             <ul class="nav-menu pull-right account-menu">
-                <li class="nav-item"><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-                <li class="nav-item"><a href="#" data-toggle="modal" data-target="#register">Register</a></li>
-                <li class="nav-item"><a href="<?php echo base_url('ads');?>"><i class="la la-plus-circle"></i> Post Ad </a></li>
+                <li class="nav-item">
+                    <button type="button" class="btn">
+                        <a href="<?php echo base_url('ads');?>"><i class="la la-pencil-square-o"></i> Post an Ad </a>    
+                    </button>
+                </li>
             </ul>
             <!-- End Navbar Menu -->
         </div>

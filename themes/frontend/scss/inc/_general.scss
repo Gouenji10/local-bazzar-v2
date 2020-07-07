@@ -25,3 +25,24 @@ p{
         }
     }
 }
+.title-with-bar{
+    position: relative;
+    &::before{
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 70px;
+        margin-left: -90px;
+        top: 50%;
+        background-color:$primary-color;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 70px;
+        margin-left: 20px;
+        top: 50%;
+        background-color:$primary-color
+    }
+}

@@ -1,65 +1,9 @@
-<section class="slider-section">
-    <div class="homepage-slider owl-theme owl-carousel">
-        <div class="item">
-            <div class="slider-container">
-                <div class="content-container">
-                    <div class="contents">
-                        <div class="pre-text">Lorem ipsum dolor,</div>
-                        <h1>Sell, Buy Anything </h1>
-                        <div class="sub-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo autem, 
-                            consequatur corporis dignissimos qui blanditiis rem nihil iste molestias
-                        </div>
-                        <a href="#" class="btn btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
+<section class="hero-section">
+    <div class="background-overlay">
+        <div class="here-content">
+            <h1 class="hero-title">Welcome to The Largest <span>Marketplace</span></h1>
+            <p>Buy and sell everything from used cars to mobile phones and computers, or search for property, jobs and more</p>
         </div>
-        <div class="item">
-            <div class="slider-container">
-                <div class="content-container">
-                    <div class="contents">
-                        <div class="pre-text">Lorem ipsum dolor,</div>
-                        <h1>Sell, Buy Anything </h1>
-                        <div class="sub-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo autem, 
-                            consequatur corporis dignissimos qui blanditiis rem nihil iste molestias
-                        </div>
-                        <a href="#" class="btn btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="slider-container">
-                <div class="content-container">
-                    <div class="contents">
-                        <div class="pre-text">Lorem ipsum dolor,</div>
-                        <h1>Sell, Buy Anything </h1>
-                        <div class="sub-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo autem, 
-                            consequatur corporis dignissimos qui blanditiis rem nihil iste molestias
-                        </div>
-                        <a href="#" class="btn btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="slider-container">
-                <div class="content-container">
-                    <div class="contents">
-                        <div class="pre-text">Lorem ipsum dolor,</div>
-                        <h1>Sell, Buy Anything </h1>
-                        <div class="sub-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo autem, 
-                            consequatur corporis dignissimos qui blanditiis rem nihil iste molestias
-                        </div>
-                        <a href="#" class="btn btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
-        </div>            
     </div>
 </section>
 <section class="search-section">
@@ -190,7 +134,7 @@
 <section class="work-section">
     <div class="container">
         <div class="heading-layout1">
-            <h1 class="heading-title text-center">How it Works</h1>
+            <h1 class="heading-title text-center title-with-bar">How it Works</h1>
         </div>
         <div class="row gutters-20">
             <div class="col-lg-3 col-sm-6">
