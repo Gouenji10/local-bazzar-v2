@@ -9,6 +9,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
 		<?php echo css('owl-carousel/owl.carousel.min.css');?>
 		<?php echo css('owl-carousel/owl.theme.min.css');?>
+		<?php echo css('ambiance/jquery.ambiance.css');?>
 		<?php echo css('main.min.css');?>
 	</head>
 	<body>

@@ -6,6 +6,7 @@
         </div>
     </div>
 </section>
+
 <section class="search-section">
     <div class="container"> 
         <div class="row">

@@ -119,19 +119,27 @@ $(document).ready(function(){
 
 });
 
-function notifi(type,text){
-	new Noty({
-		type:type,
-		layout:"topRight",
-		text:'<i class="la la-check-circle-o"></i> '+text,
-		progressBar:true,
-		timeout:2500,
-		animation:{
-			open:"animated bounceInRight",
-			close:"animated bounceOutRight"
-		}
-	}).show()
+function notification(response){
+	var title;
+	var icon;
+	if(response.title=='success'){
+		icon='la la-check-circle';
+		title = "Success !";
+	}else{
+		icon ='la la-times-circle';
+		title = 'Hmmm...!'
+	}
+	$.ambiance({
+		title:response.title,
+		message: "<div class='icon'><i class='"+icon+"'></i></div><div class='message'>"+response.message+".</div>",
+		timeout: 5,
+		fade:true
+		
+	});
 }
+	
+
+
 
 var coverageAreaTriggered = false;
 $(window).scroll(function () {
@@ -163,13 +171,13 @@ function counter(){
 	});
 }
 
-ClassicEditor.create( document.querySelector( '.quill_editor' ), {
-	// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-})
-.then( editor => {
-	window.editor = editor;
-	editor.height = "20em";			
-})
-.catch( err => {
-	console.error( err.stack );
-});
+// ClassicEditor.create( document.querySelector( '.quill_editor' ), {
+// 	// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+// })
+// .then( editor => {
+// 	window.editor = editor;
+// 	editor.height = "20em";			
+// })
+// .catch( err => {
+// 	console.error( err.stack );
+// });

@@ -223,16 +223,22 @@
         </div>
     </div>
 </div>
+<!-- loader -->
+<div id="preloader">
+    <div class="canvas">
+        <img src="assets/img/logo.png" alt="logo" class="loader-logo">
+        <div class="spinner"></div>   
+    </div>
+</div>
 
 <?php echo js('base/jquery.min.js');?>
 <?php echo js('base/core.min.js');?>
 <?php echo js('nicescroll/nicescroll.min.js');?>
 <?php echo js('validation/validation.min.js');?>
 <?php echo js('owl-carousel/owl.carousel.min.js');?>
-<?php echo js('bootstrap-wizard/bootstrap.wizard.min.js');?>
-<?php echo js('wizard/form-wizard.min.js');?>
 <?php echo js('ckeditor/ckeditor.js');?>
 <?php echo js('image-uploader/image-uploader.js');?>
+<?php echo js('ambiance/jquery.ambiance.js');?>
 <?php echo js('app/app.min.js');?>
 <?php echo js('app/custom.js');?>
 </body>
