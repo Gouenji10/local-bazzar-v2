@@ -137,6 +137,7 @@
             <h1 class="heading-title text-center title-with-bar">How it Works</h1>
         </div>
         <div class="row gutters-20">
+            <hr>
             <div class="col-lg-3 col-sm-6">
                 <div class="process-box-layout2">
                     <div class="item-icon">

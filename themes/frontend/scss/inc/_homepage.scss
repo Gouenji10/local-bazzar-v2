@@ -8,7 +8,7 @@
     .background-overlay{
         height: 100%;
         width: 100%;
-        background: rgba(0,0,0,0.8);
+        background: rgba(54,59,77,.88);
         position: relative;
         .here-content{
             margin: 0;
@@ -215,18 +215,99 @@
 }
 .category-section{
     background: $white;
-    .widget-body{
-        .media{
-            i{
-                color: $primary-color;
-                font-size: 3rem;
+    .row{
+        .category-carousel{
+            .owl-stage{
+                padding-top: 20px;
             }
-            .media-body{
-                .title{
-                    color: $heading-color;
+            .category-item{
+                padding: 30px 5px 40px 60px;
+                background: #fff;
+                margin-bottom: 30px;
+                box-shadow: 0 0 10px rgba(175,175,175,.5);
+                position: relative;
+                margin-left: 15px;
+                transition: all .3s ease-in-out 0s;
+                margin-right: 8px;
+                .icon{
+                    position: absolute;
+                    top: 35%;
+                    left: -10px;
+                    i{
+                        width: 50px;
+                        height: 50px;
+                        background: #fff;
+                        text-align: center;
+                        display: inline-block;
+                        line-height: 50px;
+                        font-size: 24px;
+                        border-radius: 4px;
+                        color: $primary-color;
+                        box-shadow: 0 0 10px rgba(175,175,175,.5);
+                        transition: all .3s ease-in-out 0s;
+                    }
                 }
-                .number{
-                    color: $text-color;
+                .services-content{
+                    h3 {
+                        margin-bottom: 5px;
+                        line-height: 35px;
+                        font-weight: 500;
+                        a{
+                            font-size: 1.25rem;
+                            color: $primary-color;
+    
+                        }
+                    } 
+                    p{
+                        font-weight: 400;
+                        margin: 0;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .owl-nav{
+                position: absolute;
+                width: 100%;
+                top: 25%;
+                button{
+                    transition:all ease-in-out 0.3s;
+                    background-color:$primary-color;
+                    height: 50px;
+                    width: 50px;
+                    &:hover{
+                        background-color:$primary-color;
+                        opacity:1 ;
+                        height: 50px;
+                        width: 50px;
+                    }
+                }
+                .owl-prev{
+                    position: absolute;
+                    left: -65px;
+                    span{
+                        color: transparent;
+                        &::before{
+                            color: $white;
+                            content: "\f111";
+                            display: block;
+                            font-family: 'lineAwesome';
+                            font-size: 32px;
+                        }
+                    }
+                }
+                .owl-next{
+                    position: absolute;
+                    right: -65px;
+                    span{
+                        color: transparent;
+                        &::before{
+                            content: "\f112";
+                            display: block;
+                            font-family: 'lineAwesome';
+                            font-size: 32px;
+                            color: $white;
+                        }
+                    }
                 }
             }
         }
@@ -281,9 +362,25 @@
     padding: 80px 0;
     .row{
         padding-top: 6rem;
+        position: relative;
+        hr{
+            border-top: 1px dotted #bbb;
+            width: 76%;
+            position: absolute;
+            top: 8.5rem;
+            left: 0;
+            right: 0;
+        }
         .item-icon{
-            text-align: center;
-            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dotted #bbb;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: #f2f3f8;
             i{
                 font-size: 2.5rem;
                 color: $primary-color;

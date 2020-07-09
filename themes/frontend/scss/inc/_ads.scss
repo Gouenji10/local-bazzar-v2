@@ -1,46 +1,65 @@
-#ad-form-content{
-    .form-group{
-        margin-bottom: 1.5rem !important;
-        label{
-            margin-bottom: 1rem;;
-        }
-        &.warranty_type{
-            .row{
-                .col-lg-2:last-of-type{
-                    position: relative;
-                    left: 30px;
-                }
-            }
-
-        }
-        .invalid-feedback{
-            color: $primary-color;
-            text-transform: capitalize;
-        }
-        .btn{
-            border-radius: 4px;
-            background: $primary-color;
-            border-color: $primary-color;
-            color: $white;
-            border-radius: 4px;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            font-size: 1.125rem;
-            font-weight: 600 !important;
-            padding: 1rem 2rem;
-            transition: all ease-in-out 0.3s;
-            i{
-                color: $heading-color;
-                transition: all ease-in-out 0.3s;
-            }
-            &:hover{
-                background-color: $black;
-                border-color: $black;
+.ads-post-header{
+    background: url('../img/banner/banner.jpg');
+    .background-overlay{
+        background: rgba(54,59,77,.88);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        .title{
+            h1{
                 color: $white;
-                i{
-                    color: $white;
-                }
             }
         }
     }
 }
+.ad-information-row{
+    background: $white;
+    padding-top: 4rem;
+}
+
+// #ad-form-content{
+//     .form-group{
+//         margin-bottom: 1.5rem !important;
+//         label{
+//             margin-bottom: 1rem;;
+//         }
+//         &.warranty_type{
+//             .row{
+//                 .col-lg-2:last-of-type{
+//                     position: relative;
+//                     left: 30px;
+//                 }
+//             }
+
+//         }
+//         .invalid-feedback{
+//             color: $primary-color;
+//             text-transform: capitalize;
+//         }
+//         .btn{
+//             border-radius: 4px;
+//             background: $primary-color;
+//             border-color: $primary-color;
+//             color: $white;
+//             border-radius: 4px;
+//             padding-top: 1rem;
+//             padding-bottom: 1rem;
+//             font-size: 1.125rem;
+//             font-weight: 600 !important;
+//             padding: 1rem 2rem;
+//             transition: all ease-in-out 0.3s;
+//             i{
+//                 color: $heading-color;
+//                 transition: all ease-in-out 0.3s;
+//             }
+//             &:hover{
+//                 background-color: $black;
+//                 border-color: $black;
+//                 color: $white;
+//                 i{
+//                     color: $white;
+//                 }
+//             }
+//         }
+//     }
+// }
