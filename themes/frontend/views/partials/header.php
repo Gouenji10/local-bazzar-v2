@@ -17,8 +17,13 @@
                         <a class="instagram" href="#"><i class="ion ion-social-instagram"></i></a>
                     </div>
                     <div class="header-top-right float-right">
-                        <a href="#" data-toggle="modal" data-target="#login"><i class="la la-unlock"></i> Log In</a> |
-                        <a href="#" data-toggle="modal" data-target="#register"><i class="la la-pencil"></i> Register</a>
+                        <?php if($this->ion_auth->logged_in()):?>
+                            <a href="<?php echo base_url('profile');?>"><i class="la la-user"></i> My Account</a> | 
+                            <a href="<?php echo base_url('auth/logout');?>"><i class="ti ti-power-off"></i> Log Out</a>
+                        <?php else: ?>
+                            <a href="#" data-toggle="modal" data-target="#login"><i class="la la-unlock"></i> Log In</a> |
+                            <a href="#" data-toggle="modal" data-target="#register"><i class="la la-pencil"></i> Register</a>
+                        <?php endif;?>                        
                     </div>
                 </div>
             </div>

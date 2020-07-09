@@ -125,8 +125,17 @@ class Auth extends Core_Controller
 			if ($this->form_validation->run() === TRUE){	
 				$remember = (bool)$this->input->post('remember');
 				if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)){				
-					echo "success";
-					exit;
+					if ($this->ion_auth->logged_in())
+					{
+						if ($this->ion_auth->is_admin()){
+							echo "0";
+							exit;
+						} 
+						else{
+							echo "1";
+							exit;
+						}
+					}					
 				}
 				else{
 					echo $this->ion_auth->errors();
@@ -134,7 +143,8 @@ class Auth extends Core_Controller
 				}
 			}
 			else{
-				echo validation_errors();
+				$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+				echo $this->data['message'];
 				exit;
 			}	
 		}else{
@@ -156,7 +166,7 @@ class Auth extends Core_Controller
 
 		// redirect them to the login page
 		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('auth/login', 'refresh');
+		redirect('/', 'refresh');
 	}
 
 	/**
@@ -639,12 +649,14 @@ class Auth extends Core_Controller
 		}
 		if ($this->form_validation->run() === TRUE && $this->ion_auth->register($identity, $password, $email, $additional_data))
 		{
-			$this->session->set_flashdata('message', $this->ion_auth->messages());
-			redirect("auth", 'refresh');
+			echo "success";
+			exit;
 		}
 		else
 		{
-			
+			$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+			echo $this->data['message'];
+			exit;
 		}
 	}
 

@@ -1,24 +1,32 @@
 var site_url = 'http://localhost/Codeigniter';
 $(document).ready(function(){
 
-	/*login form submit*/ 
+	// Login 
 	$(document).on('submit','#login_form',function(){
 		$.post(site_url+'/auth/my_login',$('#login_form').serialize(),function(response){
-			if(response=='success'){
-				document.location.reload();
-			}else{
-				notifi('error',response);
+			if(response=='1'){
+				notification('success','Login Successful')
+				setTimeout(function(){ window.location = site_url + '/profile'; },2000);
+			}else if(response=='0'){
+				notification('success','Login Successful')
+				setTimeout(function(){ window.location = site_url + '/admin/home'; },2000);
+			}
+			else{
+				notification('error',response);
 			}
 		});
 		return false;
 	});
 
+	// Registration
+
 	$(document).on('submit','#register_form',function(){
 		$.post(site_url+'/auth/register_user',$('#register_form').serialize(),function(response){
 			if(response=='success'){
-				document.location.reload();
+				notification('success','Registration Successful.');
+				// todo redirect to verification page
 			}else{
-				notifi('error',response);
+				notification('error',response);
 			}
 		});
 		return false;
@@ -119,20 +127,23 @@ $(document).ready(function(){
 
 });
 
-function notification(response){
-	var title;
+function notification(type,response){
+	var n_title; 
 	var icon;
-	if(response.title=='success'){
+	var timer;
+	if(type =='success'){
 		icon='la la-check-circle';
-		title = "Success !";
-	}else{
+		n_title = "Success !";
+		timer = 2;
+	}else if(type == "error"){
 		icon ='la la-times-circle';
-		title = 'Hmmm...!'
+		n_title = 'Hmmm...!'
+		timer = 5;
 	}
 	$.ambiance({
-		title:response.title,
-		message: "<div class='icon'><i class='"+icon+"'></i></div><div class='message'>"+response.message+".</div>",
-		timeout: 5,
+		title:n_title,
+		message: "<div class='icon "+type+"'><i class='"+icon+"'></i></div><div class='message'>"+response+".</div>",
+		timeout: timer,
 		fade:true
 		
 	});
