@@ -5,8 +5,8 @@
                 <div class="col-lg-7 col-md-5 col-xs-12">
 
                     <ul class="list-inline">
-                        <li><i class="ion ion-speakerphone"></i> +0123 456 789</li>
-                        <li><i class="ion ion-email-unread"></i> support@gmail.com</li>
+                        <li><i class="ion ion-speakerphone"></i> +977-9864573650</li>
+                        <li><i class="ion ion-email-unread"></i> sanjayshuuya@gmail.com</li>
                     </ul>
 
                 </div>

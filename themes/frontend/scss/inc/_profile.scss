@@ -1,0 +1,138 @@
+.profile-content{
+    background-color: $white;
+    .sidebar-box{
+        box-shadow: 0 0 10px rgba(175,175,175,.23);
+        .user{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background: $primary-color;
+            figure{
+                text-align: center;
+                a{
+                    height: 150px;
+                    width: 150px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    img{
+                        max-width: 100%;
+                    }
+                }
+            }  
+            .usercontent{
+                text-align: center;
+                h3{
+                    color: $white;
+                    text-transform: capitalize;
+                    font-weight: 400;
+                }
+            }              
+        }
+        .navdashboard{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            ul{
+                li{
+                    transition: all ease-in-out 0.3s;
+                    a{
+                        width:100%;
+                        padding: 12px 20px;                        
+                        color: $black;
+                        transition: all ease-in-out 0.3s;
+                        i{
+                            padding-right: 8px;
+                            font-size: 16px;
+                            color: $primary-color;
+                            transition: all ease-in-out 0.3s;
+                        }
+                    }
+                    &:hover{
+                        background: $primary-color;
+                        a{
+                            color: $white;    
+                            i{
+                                color: $white;
+                            }                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .page-content{
+        box-shadow: 0 0 10px rgba(175,175,175,.23);
+        .inner-box{
+            .dashboard-box{
+                padding: 10px;
+                border-bottom: 1px solid #eaedef;
+                .dashbord-title{
+                    font-size: 1.25rem;
+                    color:$primary-color;
+                    margin: 0;
+                    font-weight: 500;
+                    line-height: 20px;
+                    padding: 8px 0 8px 10px;
+                }
+            }
+            .dashboard-wrapper{
+                padding: 10px 15px;
+                .dashboard-sections{
+                    padding: 20px 0;
+                    border-bottom: 1px solid #eaedef;
+                    .dashboardbox{
+                        width: 100%;
+                        float: left;
+                        overflow: hidden;
+                        background: #fff;
+                        position: relative;
+                        border-radius: 4px;
+                        padding: 10px;
+                        transition: all .4s ease-in-out;
+                        .icon{
+                            float: left;
+                            i{
+                                background: $primary-color;
+                                font-size: 22px;
+                                text-align: center;
+                                line-height: 42px;
+                                width: 42px;
+                                border-radius: 50%;
+                                color: #fff;
+                                height: 42px;
+                                display: inline-block;
+                            }
+                        }
+                        .contentbox{
+                            float: left;
+                            margin-left: 10px;
+                            h2{
+                                font-size: 16px;
+                                font-weight: 500;
+                                margin-bottom: 8px;
+                                a{
+                                    color: #333;
+                                    bottom: 10px;
+                                    padding: 0 14px 0 0;
+                                }
+                            }
+                            h3{
+                                font-size: 15px;
+                                color: #999;
+                                font-weight: 400;
+                                margin: 0
+                            }
+                        }
+                    }
+                }
+            }
+            .user-verification{
+                .icon{
+                    i{
+                        font-size: 5rem;
+                        margin: 20px 0 30px;
+                        color: $primary-color;                    
+                    }
+                }
+            }
+        }
+    }
+}

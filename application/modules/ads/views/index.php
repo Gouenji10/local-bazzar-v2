@@ -144,7 +144,7 @@
                 <div class="col-md-12">
                     <div class="alert alert-danger-bordered alert-lg square" role="alert">
                         <i class="ti ti-face-sad mr-2"></i>
-                        <strong>Hey!</strong> It seems you are in loggedin. If you have an account please <a href="#" data-toggle="modal" data-target="#login"> Log In</a> else please <a href="#" data-toggle="modal" data-target="#register"> Register</a>
+                        <strong>Hey!</strong> It seems you are not logged In. If you have an account please <a href="#" data-toggle="modal" data-target="#login"> Log In</a> else please <a href="#" data-toggle="modal" data-target="#register"> Register</a>
                     </div>
                 </div>
             <?php endif;?>
