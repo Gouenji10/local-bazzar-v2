@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,6FAAI,CCAZ,AAAA,IAAI,AAAA,CACA,WAAW,CDAD,SAAS,CAAE,UAAU,CCClC,AACD,AACI,oBADgB,AACf,iBAAiB,AAAC,CACf,QAAQ,CAAE,iBAAiB,CAC9B",
+    "sources": [
+        "../scss/main.scss",
+        "../scss/inc/_vars.scss",
+        "../scss/inc/_general.scss",
+        "../scss/inc/_dashboard.scss"
+    ],
+    "names": [],
+    "file": "main.min.css"
+}

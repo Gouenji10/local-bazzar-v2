@@ -2,13 +2,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Local Bazar|| Dashboard</title>
+        <title>Dashboard || <?php echo $template['title'] ?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <?php echo css('base/bootstrap.min.css');?>
         <?php echo css('base/elisyam-1.5.min.css');?>
-        <?php echo css('animate/animate.min.css');?>
+        <?php //echo css('animate/animate.min.css');?>
         <?php apply_hook('admin_header');?>
+        <?php echo css('main.min.css');?>
     </head>
     <body id="page-top">
         <!-- loader -->
