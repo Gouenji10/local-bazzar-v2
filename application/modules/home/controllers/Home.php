@@ -113,14 +113,14 @@ class Home extends Core_Controller
 									<div class="form-group row d-flex align-items-center mb-3 clone-data">
 										<div class="col-lg-12">
 											<div class="row mb-3">
-												<div class="col-lg-5">
+												<div class="col-lg-4">
 													<label class="text-capitalize form-control-label d-flex justify-content-lg-start"><?php echo $titleValue;?> title *</label>
 													<input type="text" class="form-control" required name="field_title[]">
 													<div class="invalid-feedback">
 														Field title cannot be empty.
 													</div>
 												</div>
-												<div class="col-lg-4">
+												<div class="col-lg-3">
 													<div class="select">
 														<label class="text-capitalize form-control-label d-flex justify-content-lg-start "><?php echo $titleValue;?> type *</label>
 														<select name="field_select[]" class="custom-select form-control my-select" required="">
@@ -142,6 +142,18 @@ class Home extends Core_Controller
 														</div>
 													</div>
 												</div>
+												<div class="col-lg-2">
+													<label class="text-capitalize form-control-label d-flex justify-content-lg-start">Required *</label>
+													<select name="required[]" class="custom-select form-control my-select" required="">
+														<option value="">Select</option>															
+														<option value="yes">Yes</option>
+														<option value="no">No</option>
+													</select>
+													<div class="invalid-feedback">
+														Please select an option
+													</div>
+												</div>
+
 												<div class="col-lg-3">
 													<label class="text-capitalize form-control-label d-flex justify-content-lg-start invisible">*</label>
 													<button type="button" class="btn btn-secondary mr-1 mb-2 clone"><i class="la la-plus"></i>Add more</button>
@@ -272,7 +284,7 @@ class Home extends Core_Controller
 	public function custom_edit($custom){
 		
             $i = 1;
-            $field_data = unserialize($custom['fields']);
+			$field_data = unserialize($custom['fields']);
             $len = count($field_data['title']);
             foreach ($field_data['title'] as $tkey => $tvalue):
 				foreach ($field_data['field'] as $fkey => $fvalue):
@@ -312,9 +324,13 @@ class Home extends Core_Controller
 										</div>
 										<div class="col-lg-2">
 											<label class="text-capitalize form-control-label d-flex justify-content-lg-start">Required *</label>
-											<div class="custom-control custom-checkbox styled-checkbox mb-2">
-												<input class="custom-control-input" type="checkbox" name="required" id="required">
-												<label class="custom-control-descfeedback" for="required"></label>
+											<select name="required[]" class="custom-select form-control my-select" required="">
+												<option value="">Select</option>															
+												<option value="yes">Yes</option>
+												<option value="no">No</option>
+											</select>
+											<div class="invalid-feedback">
+												Please select an option
 											</div>
 										</div>
 										<div class="col-lg-2">
