@@ -6,7 +6,7 @@
     </ul>
     <span class="heading">Lisitngs</span>
     <ul class="list-unstyled">
-        <!-- <?php $link=array("category","sub-category");?>
+        <?php $link=array("category","sub-category");?>
         <li <?php echo in_array($page,$link)?'class="active"':""?> >
             <a href="#dropdown-cat" aria-expanded="<?php echo in_array($page,$link)?'true':'false'?>" data-toggle="collapse"><i class="la la-share-alt"></i><span>Category</span></a>
             <ul id="dropdown-cat" class="collapse list-unstyled pt-0 <?php echo in_array($page,$link)?'show':""?> ">
@@ -29,30 +29,16 @@
                 <li><a href="#">All Reviews</a></li>
             </ul>
         </li>
-        <li><a href="<?php echo base_url('admin/home');?>"><i class="la la-columns"></i><span>Menus</span></a></li>           -->
+        <li><a href="<?php echo base_url('admin/home');?>"><i class="la la-columns"></i><span>Menus</span></a></li>
     </ul> 
     <span class="heading">Custom Fields</span>
     <ul class="list-unstyled">
-        <!-- <li <?php echo $page=='cpt'?'class="active"':""?> >
+        <li <?php echo $page=='cpt'?'class="active"':""?> >
             <a href="#dropdown-custom" <?php echo $page=='cpt'?'aria-expanded="true"':'aria-expanded="false"'?> data-toggle="collapse"><i class="la la-th-large"></i><span>Custom Fields</span></a>
             <ul id="dropdown-custom" class="collapse list-unstyled pt-0 <?php echo $page=='custom'?'show':''?>">
                 <li><a <?php echo $page=='cpt'?'class="active"':""?> href="<?php echo site_url('admin/custom');?>">Custom Fields</a></li>
             </ul>
-        </li> -->
-        <?php $cpt = array('cpt','taxonomy');?>
-        <li <?php echo in_array($page,$cpt)?'class="active"':""?> >
-            <a href="#dropdown-cpt" <?php echo in_array($page,$cpt)?'aria-expanded="true"':'aria-expanded="false"'?> data-toggle="collapse"><i class="la la-th-large"></i><span>Custom Post Type</span></a>
-            <ul id="dropdown-cpt" class="collapse list-unstyled pt-0 <?php echo in_array($page,$cpt)?'show':''?>">
-                <li><a <?php echo $page=='cpt'?'class="active"':""?> href="<?php echo site_url('admin/cpt');?>">Custom Post Types</a></li>
-                <li><a <?php echo $page=='taxonomy'?'class="active"':""?> href="<?php echo site_url('admin/cpt/taxonomy');?>">Taxonomy</a></li>
-            </ul>
-        </li>
-        <li <?php echo $page=='acf'?'class="active"':""?> >
-            <a href="#dropdown-acf" <?php echo $page=='acf'?'aria-expanded="true"':'aria-expanded="false"'?> data-toggle="collapse"><i class="la la-th-large"></i><span>Advance Custom Field</span></a>
-            <ul id="dropdown-acf" class="collapse list-unstyled pt-0 <?php echo $page=='acf'?'show':''?>">
-                <li><a <?php echo $page=='acf'?'class="active"':""?> href="<?php echo site_url('admin/acf');?>">Field Groups</a></li>
-            </ul>
-        </li>
+        </li>        
     </ul>
     <span class="heading">Users</span>
     <ul class="list-unstyled">
