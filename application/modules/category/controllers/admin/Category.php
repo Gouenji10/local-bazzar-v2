@@ -93,6 +93,7 @@ class Category extends Admin_Controller
 				'fields'=>serialize(array(
 					'title'=>$this->input->post('field_title'),
 					'field'=>$this->input->post('field_select'),
+					'required'=>$this->input->post('required'),
 					'choices'=>$this->input->post('options')
 					)
 				)
@@ -136,6 +137,7 @@ class Category extends Admin_Controller
 				'fields'=>serialize(array(
 					'title'=>$this->input->post('field_title'),
 					'field'=>$this->input->post('field_select'),
+					'required'=>$this->input->post('required'),
 					'choices'=>$this->input->post('options')
 					)
 				)

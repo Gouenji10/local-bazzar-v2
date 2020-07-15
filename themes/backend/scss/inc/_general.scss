@@ -3,6 +3,6 @@ body{
 }
 .off-sidebar-content{
     &.offcanvas-scroll {
-        overflow: hidden !important;
+        overflow: hidden scroll !important;
     }
 } 
