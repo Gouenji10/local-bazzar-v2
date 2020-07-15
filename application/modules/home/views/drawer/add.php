@@ -1,7 +1,7 @@
 <div class="off-sidebar from-right">
     <div class="off-sidebar-container">
     	<header class="off-sidebar-header">
-			<div class="pl-3"><h2>New <?php echo $input_fields['title'];?></h2></div>            
+			<div class="pl-3"><h2><strong>New <?php echo $input_fields['title'];?></strong></h2></div>            
 		    <a href="#off-canvas" class="off-sidebar-close"></a>
 		</header>
 		<hr>

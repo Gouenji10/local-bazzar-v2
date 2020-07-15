@@ -1,7 +1,7 @@
 <div class="off-sidebars from-right edit-sidebar">
     <div class="off-sidebar-container">
         <header class="off-sidebar-header">
-            <div class="pl-3"><h2>Edit <?php echo $input_fields['title'];?></h2></div>
+            <div class="pl-3"><h2><strong>Edit <?php echo $input_fields['title'];?></strong></h2></div>
             <a href="#off-canvas" class="off-sidebar-close"></a>
         </header>
         <hr>

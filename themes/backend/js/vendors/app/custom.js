@@ -30,8 +30,9 @@ $(document).ready(function(){
 	$(document).on('change','.my-select',function(){
 		var value = $(this).val();
 		if(value=='check' || value=="radio"|| value=='select'){
-			$(this).closest('.clone-data').find('.select_option').toggleClass('hide');
-			// $(this).closest('.clone-data').find('.select_option').find('input').removeAttr( "disabled" )
+			$(this).closest('.clone-data').find('.select_option').toggleClass('hide');			
+		}else{
+			$(this).closest('.clone-data').find('.select_option').addClass('hide');
 		}
 	}) ;
 

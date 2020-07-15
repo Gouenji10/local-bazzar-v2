@@ -110,7 +110,7 @@ class Home extends Core_Controller
 								if(isset($multiple)):
 									$this->custom_edit($multiple);
 								else:?>
-									<div class="form-group row d-flex align-items-center mb-3 clone-data">
+									<div class="form-group no-gutters row d-flex align-items-center mb-3 clone-data">
 										<div class="col-lg-12">
 											<div class="row mb-3">
 												<div class="col-lg-4">
@@ -289,65 +289,67 @@ class Home extends Core_Controller
             foreach ($field_data['title'] as $tkey => $tvalue):
 				foreach ($field_data['field'] as $fkey => $fvalue):
 					foreach($field_data['choices'] as $ckey =>$cvalue):
-						if($tkey==$fkey && $tkey==$ckey):?>
-							<div class="form-group row d-flex align-items-center mb-3 clone-data">   							                       
-								<div class="col-lg-12">
-									<div class="row mb-3">
-										<div class="col-lg-4">
-											<label class="text-capitalize form-control-label d-flex justify-content-lg-start">Field title *</label>
-											<input type="text" class="form-control" placeholder="Field Title" required name="field_title[]" value="<?php echo $tvalue;?>">
-											<div class="invalid-feedback">
-												Field title cannot be empty.
+						foreach($field_data['required'] as $rkey =>$rvalue):
+							if($tkey==$fkey && $tkey==$ckey && $rkey ==$tkey) :?>
+								<div class="form-group no-gutters row d-flex align-items-center mb-3 clone-data">   							                       
+									<div class="col-lg-12">
+										<div class="row mb-3">
+											<div class="col-lg-4">
+												<label class="text-capitalize form-control-label d-flex justify-content-lg-start">Field title *</label>
+												<input type="text" class="form-control" placeholder="Field Title" required name="field_title[]" value="<?php echo $tvalue;?>">
+												<div class="invalid-feedback">
+													Field title cannot be empty.
+												</div>
 											</div>
-										</div>
-										<div class="col-lg-3">
-											<div class="select">        
-											<label class="text-capitalize form-control-label d-flex justify-content-lg-start ">Field type *</label>                                    
-												<select name="field_select[]" class="custom-select form-control my-select" required="">
-													<option value="">Select option</option>
-													<option value="check" <?php echo $fvalue=='check'?'selected':''?>>Checkbox</option>
-													<option value="email" <?php echo $fvalue=='email'?'selected':''?>>Email</option>
-													<option value="gallery"<?php echo $fvalue=='gallery'?'selected':''?> >Gallery</option>
-													<option value="multiple" <?php echo $fvalue=='multiple'?'selected':''?>>Multiple fields</option>
-													<option value="number" <?php echo $fvalue=='number'?'selected':''?>>Number</option>
-													<option value="password" <?php echo $fvalue=='password'?'selected':''?>>Password</option>
-													<option value="radio" <?php echo $fvalue=='radio'?'selected':''?>>Radio</option>
-													<option value="text" <?php echo $fvalue=='text'?'selected':''?>>Text</option>
-													<option value="textarea" <?php echo $fvalue=='textarea'?'selected':''?> >Textarea</option>
-													<option value="select"<?php echo $fvalue=='select'?'selected':''?> >Select</option>
-													<option value="single" <?php echo $fvalue=='single'?'selected':''?>>Single file</option>	
+											<div class="col-lg-3">
+												<div class="select">        
+												<label class="text-capitalize form-control-label d-flex justify-content-lg-start ">Field type *</label>                                    
+													<select name="field_select[]" class="custom-select form-control my-select" required="">
+														<option value="">Select option</option>
+														<option value="check" <?php echo $fvalue=='check'?'selected':''?>>Checkbox</option>
+														<option value="email" <?php echo $fvalue=='email'?'selected':''?>>Email</option>
+														<option value="gallery"<?php echo $fvalue=='gallery'?'selected':''?> >Gallery</option>
+														<option value="multiple" <?php echo $fvalue=='multiple'?'selected':''?>>Multiple fields</option>
+														<option value="number" <?php echo $fvalue=='number'?'selected':''?>>Number</option>
+														<option value="password" <?php echo $fvalue=='password'?'selected':''?>>Password</option>
+														<option value="radio" <?php echo $fvalue=='radio'?'selected':''?>>Radio</option>
+														<option value="text" <?php echo $fvalue=='text'?'selected':''?>>Text</option>
+														<option value="textarea" <?php echo $fvalue=='textarea'?'selected':''?> >Textarea</option>
+														<option value="select"<?php echo $fvalue=='select'?'selected':''?> >Select</option>
+														<option value="single" <?php echo $fvalue=='single'?'selected':''?>>Single file</option>	
+													</select>
+													<div class="invalid-feedback">
+														Please select an option
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<label class="text-capitalize form-control-label d-flex justify-content-lg-start">Required *</label>
+												<select name="required[]" class="custom-select form-control my-select" required="">
+													<option value="">Select</option>															
+													<option value="yes" <?php echo $rvalue=='yes'?'selected':''?>>Yes</option>
+													<option value="no" <?php echo $rvalue=='no'?'selected':''?>>No</option>
 												</select>
 												<div class="invalid-feedback">
 													Please select an option
 												</div>
 											</div>
-										</div>
-										<div class="col-lg-2">
-											<label class="text-capitalize form-control-label d-flex justify-content-lg-start">Required *</label>
-											<select name="required[]" class="custom-select form-control my-select" required="">
-												<option value="">Select</option>															
-												<option value="yes">Yes</option>
-												<option value="no">No</option>
-											</select>
-											<div class="invalid-feedback">
-												Please select an option
+											<div class="col-lg-2">
+											<label class="text-capitalize form-control-label d-flex justify-content-lg-start invisible">*</label>
+												<button type="button" class="btn btn-secondary mr-1 mb-2 <?php echo $i==$len?'clone':'remove'; ?>"><i class="la <?php echo $i==$len?'la-plus':'la-minus'; ?>"></i><?php echo $i==$len?'Add more':'Remove'; ?></button>
 											</div>
+											
 										</div>
-										<div class="col-lg-2">
-										<label class="text-capitalize form-control-label d-flex justify-content-lg-start invisible">*</label>
-											<button type="button" class="btn btn-secondary mr-1 mb-2 <?php echo $i==$len?'clone':'remove'; ?>"><i class="la <?php echo $i==$len?'la-plus':'la-minus'; ?>"></i><?php echo $i==$len?'Add more':'Remove'; ?></button>
-										</div>
-										
+										<div class="row select_option <?php echo $cvalue !=''?'':'hide';?>   ">
+											<div class="col-md-12">	
+												<label class="text-capitalize form-control-label d-flex justify-content-lg-start">Options (seprated by " | " )</label>
+												<input type="text" class="form-control" name="options[]" value="<?php echo $cvalue;?>">                    						
+											</div>
+										</div>                       
 									</div>
-									<div class="row select_option <?php echo $cvalue !=''?'':'hide';?>   ">
-										<div class="col-md-12">	
-											<label class="text-capitalize form-control-label d-flex justify-content-lg-start">Options (seprated by " | " )</label>
-											<input type="text" class="form-control" name="options[]" value="<?php echo $cvalue;?>">                    						
-										</div>
-									</div>                       
 								</div>
-							</div>
-						<?php $i++;endif;
+							<?php $i++;endif;
+						endforeach;
 					endforeach;
                 endforeach;
             endforeach;
