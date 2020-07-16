@@ -62,7 +62,7 @@ $(document).ready(function(){
 			$.get(site_url+'/category/get_sub_category_id/'+val,'',function(response){				
 				var obj = JSON.parse(response)
 				for (var i = 0; i < obj.length; i++) {
-					that.closest('#ad-form-content').find(".sub-category-select select").append(new Option(obj[i].title,obj[i].id));
+					that.closest('.ad-information').find(".sub-category-select select").append(new Option(obj[i].title,obj[i].id));
 				} 
 			});
 		}
@@ -73,37 +73,37 @@ $(document).ready(function(){
 		var that = $(this);
 		if(val != '0'){
 			$.get(site_url+'/ads/get_sub_category_fields/'+val,'',function(response){
-				$('#ad-form-content').find('.sub-category-content').html(response);
+				$('.ad-information').find('.sub-category-content').html(response);
 			})
 		}
 	})
 
 
-	$('#ad-form-content').find('.delivery_charges').addClass('hide');
-	$('#ad-form-content').find('.delivery_area').addClass('hide');
+	$('.ad-information').find('.delivery_charges').addClass('hide');
+	$('.ad-information').find('.delivery_area').addClass('hide');
 
-	$('#ad-form-content').find('.warranty_period').addClass('hide');
-	$('#ad-form-content').find('.warranty_includes').addClass('hide');
+	$('.ad-information').find('.warranty_period').addClass('hide');
+	$('.ad-information').find('.warranty_includes').addClass('hide');
 	
 	$(document).on('change','.home_delivery .custom-control-input',function(){
 		var val= $(this).val();
 		if(val == 'No'){
-			$(this).closest('#ad-form-content').find('.delivery_charges').addClass('hide');
-			$(this).closest('#ad-form-content').find('.delivery_area').addClass('hide');
+			$(this).closest('.ad-information').find('.delivery_charges').addClass('hide');
+			$(this).closest('.ad-information').find('.delivery_area').addClass('hide');
 		}else{
-			$(this).closest('#ad-form-content').find('.delivery_charges').removeClass('hide');
-			$(this).closest('#ad-form-content').find('.delivery_area').removeClass('hide');
+			$(this).closest('.ad-information').find('.delivery_charges').removeClass('hide');
+			$(this).closest('.ad-information').find('.delivery_area').removeClass('hide');
 		}
 	});
 
 	$(document).on('change','.warranty_type .custom-control-input',function(){
 		var val= $(this).val();
 		if(val == 'No Warranty'){
-			$(this).closest('#ad-form-content').find('.warranty_period').addClass('hide');
-			$(this).closest('#ad-form-content').find('.warranty_includes').addClass('hide');
+			$(this).closest('.ad-information').find('.warranty_period').addClass('hide');
+			$(this).closest('.ad-information').find('.warranty_includes').addClass('hide');
 		}else{
-			$(this).closest('#ad-form-content').find('.warranty_period').removeClass('hide');
-			$(this).closest('#ad-form-content').find('.warranty_includes').removeClass('hide');
+			$(this).closest('.ad-information').find('.warranty_period').removeClass('hide');
+			$(this).closest('.ad-information').find('.warranty_includes').removeClass('hide');
 		}
 	});
 
@@ -113,7 +113,7 @@ $(document).ready(function(){
 		$.get(site_url+'/ads/get_district/'+id,'',function(response){
 			var options = response.split(",");
 			for (var i = 0; i < options.length; i++) {
-				that.closest('#ad-form-content').find(".district select").append(new Option(options[i].trim(),options[i].trim()));
+				that.closest('.contact-information').find(".district select").append(new Option(options[i].trim(),options[i].trim()));
 			} 
 		})
 	})
@@ -123,6 +123,16 @@ $(document).ready(function(){
 	  	maxSize:50000000,
 	  	maxFiles:8,
 	});
+
+	$(document).on('change','.ad_person input[type=radio]',function(){
+		if($(this).val()=='me'){
+			$.get(site_url+'/ads/user_detail','',function(response){
+				console.log(response);
+			})
+		}else{
+
+		}
+	})
 
 
 });
@@ -148,47 +158,5 @@ function notification(type,response){
 		
 	});
 }
-	
 
 
-
-var coverageAreaTriggered = false;
-$(window).scroll(function () {
-  if (!coverageAreaTriggered ){
-    var scrollTop = $(window).scrollTop(),
-      windowHeight = $(window).height(),
-      elem = $('.counter-section').offset().top,
-      final = elem - windowHeight,
-      distance = final - scrollTop;
-    if (distance < 0) {
-      counter();
-      coverageAreaTriggered = true;
-    }
-  }
-});
-
-function counter(){
-	// Homepage Counter	
-	$('.counter-number').find('.counter').each(function () {
-		$(this).prop('Counter',0).animate({
-			Counter: $(this).text()
-		}, {
-			duration: 4000,
-			easing: 'swing',
-			step: function (now) {
-				$(this).text(Math.ceil(now));
-			}
-		});
-	});
-}
-
-// ClassicEditor.create( document.querySelector( '.quill_editor' ), {
-// 	// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-// })
-// .then( editor => {
-// 	window.editor = editor;
-// 	editor.height = "20em";			
-// })
-// .catch( err => {
-// 	console.error( err.stack );
-// });

@@ -13,12 +13,28 @@ class Ads extends Front_Controller{
         add_hook('basic_information','basic_information',$this,'basic_information',array());
         add_hook('general_information','general_information',$this,'general_information',array());      
         add_hook('global_information','global_information',$this,'global_information',array());      
-
+        add_hook('sc_footer','sc_footer',$this,'sc_footer',array());
         $this->template
 		->title('Post Ads')
 		->set_layout('homepage')
 		->set('page','ads')
 		->build('index');   
+    }
+    public function sc_footer(){
+        ?>
+            <script>
+                ClassicEditor.create( document.querySelector( '.quill_editor' ), {
+                    // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+                })
+                .then( editor => {
+                    window.editor = editor;
+                    editor.height = "20em";			
+                })
+                .catch( err => {
+                    console.error( err.stack );
+                });
+            </script>
+        <?php
     }
 
     public function save_ads(){
@@ -128,5 +144,10 @@ class Ads extends Front_Controller{
         add_action('get_sub_category_fields','get_sub_category_fields',array('home','getFields'),array('input_fields'=>$data['fields']));
         // print_r($data);
 
+    }
+
+    public function user_detail(){
+        $details=$this->ads_m->getOne(config('tbl_users'),array('id'=>$this->session->userdata('user_id')));
+        print_r($details);
     }
 }

@@ -25,6 +25,9 @@
                             <h3>Ad Information</h3>
                         </div>
                         <div class="content">
+                            <div class="sc_loader hide">
+                                <div class="lds-circle"><div></div></div>
+                            </div>
                             <div class="form-group row">                                                    
                                 <div class="col-xl-6 category-select">
                                     <label class="form-control-label">Category<span class="text-danger ml-2">*</span></label>
@@ -60,19 +63,22 @@
                             <h3>Contact Information</h3>
                         </div>
                         <div class="content">
+                            <div class="sc_loader hide">
+                                <div class="lds-circle"><div></div></div>
+                            </div>
                             <div class="form-group row">                                                
                                 <div class="col-xl-12">
                                     <label class="form-control-label">This Ad Belongs To:</label>
-                                    <div class="row mt-1 mb-4">
+                                    <div class="row mt-1 mb-4 ad_person">
                                         <div class="col-md-6">
                                             <div class="styled-radio">
-                                                <input type="radio" name="radio" id="rad-1">
+                                                <input type="radio" name="radio" id="rad-1" value="me">
                                                 <label for="rad-1">Me</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="styled-radio">
-                                                <input type="radio" name="radio" id="rad-2" checked="">
+                                                <input type="radio" name="radio" id="rad-2" checked="" value="else">
                                                 <label for="rad-2">Someone Else</label>
                                             </div>
                                         </div>                                
@@ -134,7 +140,7 @@
                             </div>
                             <div class="form-group row mb-4 mt-5 text-right submit-row">
                                 <div class="col-xl-12">
-                                    <input type="submit" value="Submit" class="btn btn-primary" id="ad_submit">
+                                    <input type="submit" value="Submit" class="btn global-btn" id="ad_submit">
                                 </div>
                             </div>
                         </div>

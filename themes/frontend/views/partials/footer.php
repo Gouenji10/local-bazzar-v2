@@ -240,6 +240,7 @@
 <?php echo js('image-uploader/image-uploader.js');?>
 <?php echo js('ambiance/jquery.ambiance.js');?>
 <?php echo js('app/app.min.js');?>
+<?php apply_hook('sc_footer');?>
 <?php echo js('app/custom.js');?>
 </body>
 </html>

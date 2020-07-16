@@ -129,12 +129,14 @@ p{
         }
     }
 }
+input[type="submit"].global-btn,
 .global-btn{
     background: $primary-color;
     color: $white;
     border-radius: 4px;
     padding: 16px 28px;
     transition: all ease-in-out 0.3s;
+    font-weight: 600 !important;
     &:hover{
         background-color: $black;
 

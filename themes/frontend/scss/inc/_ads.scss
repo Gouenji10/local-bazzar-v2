@@ -1,51 +1,61 @@
 .ad-information-row{
     background: $white;
     padding-top: 4rem;
+    .contact-information,
+    .ad-information{
+        .content{
+            position: relative;
+            .sc_loader{
+                background: rgba(0,0,0,0.3);
+                position: absolute;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 99;                
+                .lds-circle{
+                    margin: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .form-group{
+                margin-bottom: 1.5rem !important;
+                .form-control-label{
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
 }
 
-// #ad-form-content{
-//     .form-group{
-//         margin-bottom: 1.5rem !important;
-//         label{
-//             margin-bottom: 1rem;;
-//         }
-//         &.warranty_type{
-//             .row{
-//                 .col-lg-2:last-of-type{
-//                     position: relative;
-//                     left: 30px;
-//                 }
-//             }
 
-//         }
-//         .invalid-feedback{
-//             color: $primary-color;
-//             text-transform: capitalize;
-//         }
-//         .btn{
-//             border-radius: 4px;
-//             background: $primary-color;
-//             border-color: $primary-color;
-//             color: $white;
-//             border-radius: 4px;
-//             padding-top: 1rem;
-//             padding-bottom: 1rem;
-//             font-size: 1.125rem;
-//             font-weight: 600 !important;
-//             padding: 1rem 2rem;
-//             transition: all ease-in-out 0.3s;
-//             i{
-//                 color: $heading-color;
-//                 transition: all ease-in-out 0.3s;
-//             }
-//             &:hover{
-//                 background-color: $black;
-//                 border-color: $black;
-//                 color: $white;
-//                 i{
-//                     color: $white;
-//                 }
-//             }
-//         }
-//     }
-// }
+.lds-circle {
+    display: inline-block;
+    transform: translateZ(1px);
+}
+  .lds-circle > div {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    background: #fff;
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+      transform: rotateY(3600deg);
+    }
+}
