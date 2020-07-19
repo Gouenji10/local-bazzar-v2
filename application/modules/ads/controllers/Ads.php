@@ -20,7 +20,7 @@ class Ads extends Front_Controller{
 		->set('page','ads')
 		->build('index');   
     }
-    public function sc_footer(){
+    public function sc_footer(){        
         ?>
             <script>
                 ClassicEditor.create( document.querySelector( '.quill_editor' ), {
@@ -56,19 +56,29 @@ class Ads extends Front_Controller{
                     'content'=>$this->input->post(),
                     'images'=>$ads_image,
                 )),
-                'status '=>'draft',               
+                'user_id'=>$this->session->userdata('user_id'),
+                'status '=>'published',               
             );
             $this->ads_m->insert(config('tbl_ads'),$insert_data);
-        }
-        
+            $insert_id = $this->ads_m->db->insert_id();
+            if($insert_id){
+                redirect('ads/single/'.$insert_id);
+            }
+        }        
     }
 
-    public function single_ads($id){
+    public function single($id){
+        add_hook('single_sidebar','single_sidebar',$this,'single_sidebar',array());
+        $this->data['single']=$this->ads_m->getOne(config('tbl_ads'),array('id'=>$id));
         $this->template
-		->title('Post Ads')
+		->title($this->data['single']['title'])
 		->set_layout('homepage')
 		->set('page','ads')
-		->build('single');
+		->build('single',$this->data);
+    }
+
+    public function single_sidebar(){
+        echo $this->load->view('single-sidebar','',true);
     }
 
     public function ads_image_upload($files){

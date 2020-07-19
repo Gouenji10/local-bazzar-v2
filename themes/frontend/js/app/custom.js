@@ -107,11 +107,13 @@ $(document).ready(function(){
 		}
 	});
 
-	$(document).on('change','.custom-zone',function(){
+	$(document).on('change','.contact-information .custom-zone',function(){
 		var id =$(this).val();
 		var that = $(this);
 		$.get(site_url+'/ads/get_district/'+id,'',function(response){
 			var options = response.split(",");
+			that.closest('.contact-information').find(".district select").empty();
+			that.closest('.contact-information').find(".district select").append(new Option('Select District',''));
 			for (var i = 0; i < options.length; i++) {
 				that.closest('.contact-information').find(".district select").append(new Option(options[i].trim(),options[i].trim()));
 			} 
@@ -127,12 +129,61 @@ $(document).ready(function(){
 	$(document).on('change','.ad_person input[type=radio]',function(){
 		if($(this).val()=='me'){
 			$.get(site_url+'/ads/user_detail','',function(response){
-				console.log(response);
+				
 			})
 		}else{
 
 		}
 	})
+
+	// profile js start
+
+	$(document).on('change','.profile-setting-content .custom-zone',function(){
+		var id =$(this).val();
+		var that = $(this);
+		$.get(site_url+'/ads/get_district/'+id,'',function(response){
+			var options = response.split(",");
+			that.closest('.profile-setting-content').find(".district select").empty();
+			that.closest('.profile-setting-content').find(".district select").append(new Option('Select District',''));
+			for (var i = 0; i < options.length; i++) {
+				that.closest('.profile-setting-content').find(".district select").append(new Option(options[i].trim(),options[i].trim()));
+			} 
+		})
+	})
+
+	$(document).on('submit','#profile_contact_form',function(){	
+		$.post(site_url+'/profile/contact_save',$(this).serialize(),function(response){
+			if(response=='success'){
+				notification('success','Details added successful');	
+				setTimeout(function(){ window.location = site_url + '/profile/setting'; },2000);				
+			}else if(response=='updated'){
+				notification('success','Details updated successfully');
+				setTimeout(function(){ window.location = site_url + '/profile/setting'; },2000);
+			}
+			else{
+				notification('error','Something went wrong. Please try again.');
+			}
+		})
+		return false;
+	})
+
+	// single ad js start
+
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		asNavFor: '.slider-nav'
+	});
+	$('.slider-nav').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.slider-for',
+		dots: true,
+		centerMode: false,
+		focusOnSelect: true,
+	});
 
 
 });
@@ -156,6 +207,21 @@ function notification(type,response){
 		timeout: timer,
 		fade:true
 		
+	});
+}
+
+function check_user_address(){
+	$(function() {
+		$.ambiance({
+			title:'Hmmm...!',
+			message: "<div class='icon error'><i class='la la-times-circle'></i></div><div class='message'>It seems like your account have not enough details.</div>",
+			timeout:0,
+			permanent: true,
+			link: site_url+'/profile/setting',
+			linkName: "Click here to enter details. ",
+			fade:true
+			
+		});
 	});
 }
 

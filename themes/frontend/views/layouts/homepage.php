@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<title><?php echo $template['title'];?></title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Bootstrap 3.1 core css -->

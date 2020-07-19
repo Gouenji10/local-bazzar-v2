@@ -40,6 +40,7 @@
   -moz-border-radius: 4px; /* Firefox 3.6 and earlier. */
   padding: 10px;
   margin: 10px;
+  width: 100% !important;
 }
 
 .ambiance-default {
