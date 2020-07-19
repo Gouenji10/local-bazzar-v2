@@ -39,86 +39,123 @@
                         </div>
                         <div class="single-listing-meta-wrap">
                             <ul class="single-listing-meta">
-                                <li><i class="la la-clock-o" aria-hidden="true"></i>July 18, 2019 12:20 pm</li>
-                                <li><i class="la la-map-marker" aria-hidden="true"></i>Abilene, Kansas</li>
+                                <li><i class="la la-clock-o" aria-hidden="true"></i><?php echo date('F d, Y',strtotime($single['created_at']));?></li>
+                                <li><i class="la la-map-marker" aria-hidden="true"></i> <?php echo $single_ads['address'].', '.$single_ads['city'].', ',$single_ads['district'];?></li>
                             </ul>
                             <div class="listing-badge-wrap"> 
-                                <span class="badge top-badge badge-warning">Top</span>
+                                <span class="badge top-badge badge-warning">Urgent</span>
                             </div>
                         </div>
                         <div class="content-area">
                             <div class="row">
-                                <div class="col-12 col-md-8">
-                                    <div class="rtin-content">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In eu mi bibendum neque egestas congue quisque. At urna condimentum mattis pellentesque id nibh tortor. Aliquam eleifend mi in nulla posuere. Sed sed risus pretium quam vulputate. Sit amet dictum sit amet justo donec enim diam vulputate. Condimentum lacinia quis vel eros donec ac odio. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Id interdum velit laoreet id. Enim diam vulputate ut pharetra sit. Dictum sit amet justo donec enim diam vulputate. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</p><p>Molestie a iaculis at erat pellentesque. Augue interdum velit euismod in. Aliquam id diam maecenas ultricies mi eget mauris pharetra et. Orci sagittis eu volutpat odio facilisis. Euismod nisi porta lorem mollis. Viverra accumsan in nisl nisi. Porttitor eget dolor morbi non arcu risus quis. Magna fringilla urna porttitor rhoncus dolor purus. Eget mi proin sed libero. Vitae justo eget magna fermentum iaculis eu non diam. Leo vel fringilla est ullamcorper eget nulla. Faucibus ornare suspendisse sed nisi lacus sed. Semper risus in hendrerit gravida rutrum. Urna cursus eget nunc scelerisque viverra mauris in. Fermentum posuere urna nec tincidunt.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-4">
+                                <div class="col-12 col-md-12">
                                     <h3 class="specs-title">Overview</h3>
-                                    <div class="custom-fields clearfix">
+                                    <div class="overview-fields clearfix">
                                         <ul>
                                             <li> 
-                                                <span class="label">Device Type : </span> 
-                                                <span class="title">Laptop</span>
+                                                <span class="label">Category: </span> 
+                                                <span class="title"><?php $category = modules::load('category')->get_single_category($single['category']);echo $category['title'];?></span>
                                             </li>
+                                            <li> 
+                                                <span class="label">Type: </span> 
+                                                <span class="title"><?php $sub_category = modules::load('category')->get_single_sub_category($single['sub_category']);echo $sub_category['title'];?></span>
+                                            </li>
+                                            
                                             <li> 
                                                 <span class="label">Condition : </span> 
-                                                <span class="title">New</span>
+                                                <span class="title"><?php echo $single_ads['condition'];?></span>
+                                            </li>
+                                            
+                                            <li> 
+                                                <span class="label">Warranty: </span> 
+                                                <span class="title"><?php echo $single_ads['warranty_type'];?></span>
                                             </li>
                                             <li> 
-                                                <span class="label">Model : </span> 
-                                                <span class="title">ZX-4356</span>
+                                                <span class="label">Home Delivery: </span> 
+                                                <span class="title"><?php echo $single_ads['home_delivery'];?></span>
                                             </li>
+                                            <?php if(isset($single_ads['used_duration'])):?>
+                                                <li> 
+                                                    <span class="label">Used Duration: </span> 
+                                                    <span class="title"><?php echo $single_ads['used_duration'];?></span>
+                                                </li>
+                                            <?php endif;?>  
+                                            <?php if(isset($single_ads['Registered_Zone'])):?>  
+                                                <li> 
+                                                    <span class="label">Registered Zone: </span> 
+                                                    <span class="title"><?php echo $single_ads['Registered_Zone'];?></span>
+                                                </li>
+                                            <?php endif;?>
+                                            <?php if(isset($single_ads['lot_no'])):?>
+                                            
+                                                <li> 
+                                                    <span class="label">Lot No: </span> 
+                                                    <span class="title"><?php echo $single_ads['lot_no'];?></span>
+                                                </li>
+                                            <?php endif;?>
+                                            <?php if(isset($single_ads['Engine_CC'])):?>
+                                                <li> 
+                                                    <span class="label">Engine CC: </span> 
+                                                    <span class="title"><?php echo $single_ads['Engine_CC'];?></span>
+                                                </li>
+                                            <?php endif;?>
+                                            <?php if(isset($single_ads['Make_Year'])):?>
+                                                <li> 
+                                                    <span class="label">Made In: </span> 
+                                                    <span class="title"><?php echo $single_ads['Make_Year'];?></span>
+                                                </li>
+                                            <?php endif;?>
+                                            <?php if(isset($single_ads['Mileage_(km_/_l)'])):?>
+                                                <li> 
+                                                    <span class="label">Mileage Km/ltr: </span> 
+                                                    <span class="title"><?php echo $single_ads['Mileage_(km_/_l)'];?></span>
+                                                </li>
+                                            <?php endif;?>
+                                            <?php if(isset($single_ads['Kilometers'])):?>
+                                                <li> 
+                                                    <span class="label">Ran Upto: </span> 
+                                                    <span class="title"><?php echo $single_ads['Kilometers'];?> km</span>
+                                                </li>
+                                            <?php endif;?>
                                         </ul>
-                                    </div>
-                                    <ul class="list-group list-group-flush single-listing-action">
-                                        <li class="list-group-item icon-common">
-                                            <i class="la la-eye"></i>1,555 views
-                                        </li>
-                                        <li class="list-group-item icon-common" id="rtcl-favourites">
-                                            <a href="javascript:void(0)" class="rtcl-require-login">
-                                                <i class="la la-heart-o"></i>
-                                                <span class="favourite-label">Add to Favourites</span>
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item icon-common"> 
-                                            <a href="javascript:void(0)" class="rtcl-require-login">
-                                                <i class="la la-warning"></i>Report Abuse
-                                            </a>
-                                        </li>
-                                        <li class="list-group-item sidebar-social">
-                                            <div class="share-label icon-common">
-                                                <i class="la ti-sharethis" aria-hidden="true"></i>Share this Ad:
-                                            </div> 
-                                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.radiustheme.com/demo/wordpress/themes/classima/listing/ultrabook-2018-core-i7-with-16-gb-ramn/" target="_blank" rel="nofollow">
-                                                <i class="ti ti-facebook"></i>
-                                            </a> 
-                                            <a href="https://twitter.com/intent/tweet?text=Ultrabook%25202018%2520core%2520i7%2520with%252016%2520GB%2520RAM&amp;url=https://www.radiustheme.com/demo/wordpress/themes/classima/listing/ultrabook-2018-core-i7-with-16-gb-ramn/" target="_blank" rel="nofollow">
-                                                <i class="ti ti-twitter"></i>
-                                            </a> 
-                                            <a href="https://plus.google.com/share?url=https://www.radiustheme.com/demo/wordpress/themes/classima/listing/ultrabook-2018-core-i7-with-16-gb-ramn/" target="_blank" rel="nofollow">
-                                                <i class="ti ti-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
-                        <div class="specs">
-                            <h3 class="specs-title">Features:</h3>
-                            <ul class="spec-items clearfix list-col-2">
-                                <li>256GB PCI flash storage</li>
-                                <li>2.7 GHz dual-core Intel Core i5 processor</li>
-                                <li>Turbo Boost up to 3.1GHz</li>
-                                <li>Intel Iris Graphics 6100</li>
-                                <li>8GB memory (up from 4GB in 2013 model)</li>
-                                <li>10 hour battery life</li>
-                                <li>13.3" Retina Display</li>
-                                <li>Intact Box</li>
-                                <li>1 Year international warranty</li>
+                        <div class="listing-action">
+                            <ul class="single-listing-action">
+                                <li>
+                                    <i class="la la-eye"></i>1,555 views
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="rtcl-require-login">
+                                        <i class="la la-heart-o"></i>
+                                        <span class="favourite-label">Add to Favourites</span>
+                                    </a>
+                                </li>
+                                <li> 
+                                    <a href="javascript:void(0)" class="rtcl-require-login">
+                                        <i class="la la-warning"></i>Report Abuse
+                                    </a>
+                                </li>                                        
                             </ul>
+                        </div>
+                        <div class="specs">
+                            <?php if(isset($single_ads['Features'])):?>
+                                <h3 class="specs-title">Features:</h3>
+                                <ul class="spec-items clearfix list-col-2">
+                                    <?php 
+                                        foreach($single_ads['Features'] as $feature){
+                                            echo "<li>".$feature."</li>";
+                                        }                                    
+                                    ?>
+                                                                        
+                                </ul>
+                            <?php endif;?>
+                        </div>
+                        <div class="description">
+                            <h3 class="desc-title">Description</h3>
+                            <p><?php echo $single_ads['description'];?></p>
                         </div>
                     </div>            
                 </div>

@@ -61,7 +61,7 @@
                                     <h3>Contact Information</h3>
                                 </div>
                                 <div class="content">                                
-                                    <div class="form-group row">                                                
+                                    <!-- <div class="form-group row">                                                
                                         <div class="col-xl-12">
                                             <label class="form-control-label">This Ad Belongs To:</label>
                                             <div class="row mt-1 mb-4 ad_person">
@@ -79,7 +79,7 @@
                                                 </div>                                
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group row">
                                         <div class="col-xl-12 mb-3">
                                             <label class="form-control-label">Address<span class="text-danger ml-2">*</span></label>

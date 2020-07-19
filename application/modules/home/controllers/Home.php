@@ -76,7 +76,7 @@ class Home extends Core_Controller
 													$choices = explode('|',$choicesValue);
 													foreach($choices as $checkKey => $checkValue):?>
 														<div class="custom-control custom-checkbox styled-checkbox col-md-6 col-lg-6 mb-2">
-															<input class="custom-control-input" type="checkbox" name="<?php echo str_replace(' ','_',$titleValue);?>[]" id="<?php echo str_replace(' ','_',$titleValue).'-'.$checkKey;?>">
+															<input class="custom-control-input" type="checkbox" name="<?php echo str_replace(' ','_',$titleValue);?>[]" id="<?php echo str_replace(' ','_',$titleValue).'-'.$checkKey;?>" value="<?php echo $checkValue;?>">
 															<label class="custom-control-descfeedback" for="<?php echo str_replace(' ','_',$titleValue).'-'.$checkKey;?>"><?php echo $checkValue;?></label>														
 														</div>
 													<?php endforeach;

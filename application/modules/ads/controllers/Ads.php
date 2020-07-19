@@ -38,6 +38,7 @@ class Ads extends Front_Controller{
     }
 
     public function save_ads(){
+
         if($this->input->post()){            
             if($_FILES){
                 $ads_image = $this->ads_image_upload($_FILES);

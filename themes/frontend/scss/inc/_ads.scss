@@ -99,21 +99,26 @@
 						position: absolute;
 						height: 4px;
 						width: 40px;
-						background-color: #f85c70;
+						background-color: $primary-color;
 						z-index: 1;
 						bottom: 0;
 						left: 0;
 					}
 				}
-				.custom-fields {
+				.overview-fields {
 					margin-bottom: 20px;
 					ul{
 						list-style-type: none;
 						margin: 0;
 						padding: 0;
 						li {
-							display: block;
-							font-size: 15px;
+							width: 49%;
+							float: left;
+							padding-left: 30px;
+							position: relative;
+							margin-bottom: 8px;
+							margin-right: 5px;
+							line-height: 2;
 							.label {
 								color: #222;
 								font-weight: 600;
@@ -125,16 +130,16 @@
 						}
 					}
 				}
+											
+			}
+			.listing-action{
 				.single-listing-action{
-					list-style-type: none;
-					margin: 0;
-					padding: 0;
-					border: none;
 					li {
-						padding: 10px 0;
+						padding: 10px 20px 10px 0;
 						margin-right: 0;
 						font-size: 15px;
 						font-weight: 500;
+						display: inline-block;
 						color: #777;
 						i {
 							color: #b8b8b8;
@@ -149,22 +154,10 @@
 						
 						.share-label {
 							margin-bottom: 5px;
-						}
-						&.sidebar-social{
-							a{
-								margin: 3px;
-								padding: 0;
-								i{
-									width: 35px;
-									height: 35px;
-									font-size: 16px;
-									line-height: 36px;
-								}
-							}
-						}
+						}						
 					}
-				}				
-			}
+				}
+			}	
 			.specs {
 				margin-top: 20px;
 				.specs-title {
@@ -180,7 +173,7 @@
 						position: absolute;
 						height: 4px;
 						width: 40px;
-						background-color: #f85c70;
+						background-color: $primary-color;
 						z-index: 1;
 						bottom: 0;
 						left: 0;
@@ -212,6 +205,28 @@
 							border-radius: 50%;
 							z-index: 1;							
 						}
+					}
+				}
+			}
+			.description{
+				margin-top: 20px;
+				.desc-title{
+					position: relative;
+					font-size: 22px;
+					line-height: 1.5;
+					font-weight: 700;
+					color: #222;
+					margin-bottom: 20px;
+					padding-bottom: 15px;
+					&::after {
+						content: "";
+						position: absolute;
+						height: 4px;
+						width: 40px;
+						background-color: $primary-color;
+						z-index: 1;
+						bottom: 0;
+						left: 0;
 					}
 				}
 			}

@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 01, 2020 at 11:03 PM
+-- Host: 127.0.0.1
+-- Generation Time: Jul 19, 2020 at 03:39 PM
 -- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.6
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,8 +72,16 @@ CREATE TABLE `tbl_ads` (
   `district` varchar(256) NOT NULL,
   `city` varchar(256) NOT NULL,
   `additional_info` longtext NOT NULL,
+  `user_id` int(10) NOT NULL,
   `status` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_ads`
+--
+
+INSERT INTO `tbl_ads` (`id`, `title`, `category`, `sub_category`, `created_at`, `expiry`, `price`, `zone`, `district`, `city`, `additional_info`, `user_id`, `status`) VALUES
+(1, 'Pulsar 150 Urgent Sale !!!', 17, 4, '2020-07-17', '1 month', '150000', '9', 'Rupandehi', 'Butwal', 'a:2:{s:7:\"content\";a:29:{s:8:\"category\";s:2:\"17\";s:12:\"sub_category\";s:1:\"4\";s:5:\"title\";s:26:\"Pulsar 150 Urgent Sale !!!\";s:11:\"description\";s:31:\"<p>This is the amazing bike</p>\";s:6:\"expiry\";s:7:\"1 month\";s:5:\"price\";s:6:\"150000\";s:16:\"price_negotiable\";s:3:\"Yes\";s:9:\"condition\";s:8:\"Like New\";s:13:\"used_duration\";s:7:\"2 years\";s:4:\"type\";s:1:\"2\";s:15:\"Registered_Zone\";s:7:\"Lumbini\";s:6:\"lot_no\";s:8:\"Lu 35 Pa\";s:9:\"Engine_CC\";s:3:\"150\";s:9:\"Make_Year\";s:4:\"2017\";s:16:\"Mileage_(km_/_l)\";s:2:\"30\";s:10:\"Kilometers\";s:5:\"17800\";s:8:\"Features\";a:11:{i:0;s:2:\"on\";i:1;s:2:\"on\";i:2;s:2:\"on\";i:3;s:2:\"on\";i:4;s:2:\"on\";i:5;s:2:\"on\";i:6;s:2:\"on\";i:7;s:2:\"on\";i:8;s:2:\"on\";i:9;s:2:\"on\";i:10;s:2:\"on\";}s:13:\"home_delivery\";s:2:\"No\";s:16:\"delivery_charges\";s:0:\"\";s:13:\"warranty_type\";s:11:\"No Warranty\";s:15:\"warranty_period\";s:0:\"\";s:17:\"warranty_includes\";s:0:\"\";s:5:\"radio\";s:2:\"me\";s:7:\"address\";s:12:\"Devinagar-13\";s:4:\"city\";s:6:\"Butwal\";s:4:\"zone\";s:1:\"9\";s:8:\"district\";s:9:\"Rupandehi\";s:7:\"contact\";s:10:\"9864573650\";i:0;s:2:\"30\";}s:6:\"images\";a:3:{i:0;s:36:\"917c74659ac8927c87374faa3b91b8a9.jpg\";i:1;s:36:\"f1ad54702832dc2b376fffcc2856b672.jpg\";i:2;s:36:\"e0a712c899607e1064cbdfce5d8d1f2a.jpg\";}}', 1, 'draft');
 
 -- --------------------------------------------------------
 
@@ -129,12 +137,12 @@ CREATE TABLE `tbl_custom_fields` (
 --
 
 INSERT INTO `tbl_custom_fields` (`id`, `title`, `slug`, `fields`) VALUES
-(1, 'Custom Field', 'custom-field', 'a:3:{s:5:\"title\";a:3:{i:0;s:5:\"title\";i:1;s:4:\"slug\";i:2;s:5:\"field\";}s:5:\"field\";a:3:{i:0;s:4:\"text\";i:1;s:4:\"text\";i:2;s:8:\"multiple\";}s:7:\"choices\";a:3:{i:0;s:0:\"\";i:1;s:0:\"\";i:2;s:0:\"\";}}'),
-(2, 'Category', 'category', 'a:3:{s:5:\"title\";a:4:{i:0;s:5:\"title\";i:1;s:4:\"slug\";i:2;s:4:\"icon\";i:3;s:8:\"position\";}s:5:\"field\";a:4:{i:0;s:4:\"text\";i:1;s:4:\"text\";i:2;s:4:\"text\";i:3;s:4:\"text\";}s:7:\"choices\";a:4:{i:0;s:0:\"\";i:1;s:0:\"\";i:2;s:0:\"\";i:3;s:0:\"\";}}'),
-(3, 'Sub Category', 'sub-category', 'a:3:{s:5:\"title\";a:5:{i:0;s:5:\"title\";i:1;s:4:\"slug\";i:2;s:8:\"category\";i:3;s:4:\"icon\";i:4;s:5:\"field\";}s:5:\"field\";a:5:{i:0;s:4:\"text\";i:1;s:4:\"text\";i:2;s:6:\"select\";i:3;s:4:\"text\";i:4;s:8:\"multiple\";}s:7:\"choices\";a:5:{i:0;s:0:\"\";i:1;s:0:\"\";i:2;s:0:\"\";i:3;s:0:\"\";i:4;s:0:\"\";}}'),
-(6, 'Ad Basic Fields', 'ads-information-form', 'a:3:{s:5:\"title\";a:3:{i:0;s:5:\"title\";i:1;s:11:\"description\";i:2;s:6:\"expiry\";}s:5:\"field\";a:3:{i:0;s:4:\"text\";i:1;s:8:\"textarea\";i:2;s:5:\"radio\";}s:7:\"choices\";a:3:{i:0;s:0:\"\";i:1;s:0:\"\";i:2;s:38:\"1 week|2 weeks|1 month|3 month|6 month\";}}'),
-(7, 'Ads General Fields', 'ads-general-information-form', 'a:3:{s:5:\"title\";a:6:{i:0;s:13:\"home delivery\";i:1;s:13:\"delivery area\";i:2;s:16:\"delivery charges\";i:3;s:13:\"warranty type\";i:4;s:15:\"warranty period\";i:5;s:17:\"warranty includes\";}s:5:\"field\";a:6:{i:0;s:5:\"radio\";i:1;s:5:\"check\";i:2;s:4:\"text\";i:3;s:5:\"radio\";i:4;s:4:\"text\";i:5;s:4:\"text\";}s:7:\"choices\";a:6:{i:0;s:6:\"Yes|No\";i:1;s:54:\"Within my Area|Within my City|Almost anywhere in Nepal\";i:2;s:0:\"\";i:3;s:45:\"Dealer/Shop|Manufacturer/Importer|No Warranty\";i:4;s:0:\"\";i:5;s:0:\"\";}}'),
-(8, 'Ads Global fields', 'ads-global', 'a:3:{s:5:\"title\";a:4:{i:0;s:5:\"price\";i:1;s:16:\"price negotiable\";i:2;s:9:\"condition\";i:3;s:13:\"used duration\";}s:5:\"field\";a:4:{i:0;s:4:\"text\";i:1;s:5:\"radio\";i:2;s:5:\"radio\";i:3;s:4:\"text\";}s:7:\"choices\";a:4:{i:0;s:0:\"\";i:1;s:15:\"Yes|Fixed Price\";i:2;s:50:\"Brand New|Like New|Excellent|Good/Fair|Not Working\";i:3;s:0:\"\";}}');
+(1, 'Custom Field', 'custom-field', 'a:4:{s:5:\"title\";a:3:{i:0;s:5:\"title\";i:1;s:4:\"slug\";i:2;s:5:\"field\";}s:5:\"field\";a:3:{i:0;s:4:\"text\";i:1;s:4:\"text\";i:2;s:8:\"multiple\";}s:8:\"required\";a:3:{i:0;s:3:\"yes\";i:1;s:3:\"yes\";i:2;s:3:\"yes\";}s:7:\"choices\";a:3:{i:0;s:0:\"\";i:1;s:0:\"\";i:2;s:0:\"\";}}'),
+(2, 'Category', 'category', 'a:4:{s:5:\"title\";a:4:{i:0;s:5:\"title\";i:1;s:4:\"slug\";i:2;s:4:\"icon\";i:3;s:8:\"position\";}s:5:\"field\";a:4:{i:0;s:4:\"text\";i:1;s:4:\"text\";i:2;s:4:\"text\";i:3;s:4:\"text\";}s:8:\"required\";a:4:{i:0;s:2:\"no\";i:1;s:2:\"no\";i:2;s:2:\"no\";i:3;s:2:\"no\";}s:7:\"choices\";a:4:{i:0;s:0:\"\";i:1;s:0:\"\";i:2;s:0:\"\";i:3;s:0:\"\";}}'),
+(3, 'Sub Category', 'sub-category', 'a:4:{s:5:\"title\";a:5:{i:0;s:5:\"title\";i:1;s:4:\"slug\";i:2;s:8:\"category\";i:3;s:4:\"icon\";i:4;s:5:\"field\";}s:5:\"field\";a:5:{i:0;s:4:\"text\";i:1;s:4:\"text\";i:2;s:6:\"select\";i:3;s:4:\"text\";i:4;s:8:\"multiple\";}s:8:\"required\";a:5:{i:0;s:2:\"no\";i:1;s:2:\"no\";i:2;s:2:\"no\";i:3;s:2:\"no\";i:4;s:2:\"no\";}s:7:\"choices\";a:5:{i:0;s:0:\"\";i:1;s:0:\"\";i:2;s:0:\"\";i:3;s:0:\"\";i:4;s:0:\"\";}}'),
+(6, 'Ad Basic Fields', 'ads-information-form', 'a:4:{s:5:\"title\";a:3:{i:0;s:5:\"title\";i:1;s:11:\"description\";i:2;s:6:\"expiry\";}s:5:\"field\";a:3:{i:0;s:4:\"text\";i:1;s:8:\"textarea\";i:2;s:5:\"radio\";}s:8:\"required\";a:3:{i:0;s:3:\"yes\";i:1;s:3:\"yes\";i:2;s:3:\"yes\";}s:7:\"choices\";a:3:{i:0;s:0:\"\";i:1;s:0:\"\";i:2;s:38:\"1 week|2 weeks|1 month|3 month|6 month\";}}'),
+(7, 'Ads General Fields', 'ads-general-information-form', 'a:4:{s:5:\"title\";a:6:{i:0;s:13:\"home delivery\";i:1;s:13:\"delivery area\";i:2;s:16:\"delivery charges\";i:3;s:13:\"warranty type\";i:4;s:15:\"warranty period\";i:5;s:17:\"warranty includes\";}s:5:\"field\";a:6:{i:0;s:5:\"radio\";i:1;s:5:\"check\";i:2;s:4:\"text\";i:3;s:5:\"radio\";i:4;s:4:\"text\";i:5;s:4:\"text\";}s:8:\"required\";a:6:{i:0;s:3:\"yes\";i:1;s:2:\"no\";i:2;s:2:\"no\";i:3;s:3:\"yes\";i:4;s:2:\"no\";i:5;s:2:\"no\";}s:7:\"choices\";a:6:{i:0;s:6:\"Yes|No\";i:1;s:54:\"Within my Area|Within my City|Almost anywhere in Nepal\";i:2;s:0:\"\";i:3;s:45:\"Dealer/Shop|Manufacturer/Importer|No Warranty\";i:4;s:0:\"\";i:5;s:0:\"\";}}'),
+(8, 'Ads Global fields', 'ads-global', 'a:4:{s:5:\"title\";a:4:{i:0;s:5:\"price\";i:1;s:16:\"price negotiable\";i:2;s:9:\"condition\";i:3;s:13:\"used duration\";}s:5:\"field\";a:4:{i:0;s:4:\"text\";i:1;s:5:\"radio\";i:2;s:5:\"radio\";i:3;s:4:\"text\";}s:8:\"required\";a:4:{i:0;s:3:\"yes\";i:1;s:3:\"yes\";i:2;s:3:\"yes\";i:3;s:3:\"yes\";}s:7:\"choices\";a:4:{i:0;s:0:\"\";i:1;s:9:\"Yes|Fixed\";i:2;s:50:\"Brand New|Like New|Excellent|Good/Fair|Not Working\";i:3;s:0:\"\";}}');
 
 -- --------------------------------------------------------
 
@@ -161,6 +169,17 @@ CREATE TABLE `tbl_meta` (
   `meta_value` longtext NOT NULL,
   `for_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_meta`
+--
+
+INSERT INTO `tbl_meta` (`id`, `meta_key`, `meta_value`, `for_id`) VALUES
+(1, '_address', 'Devinagar-13', 3),
+(2, '_city', 'Butwal', 3),
+(3, '_zone', '9', 3),
+(4, '_district', 'Rupandehi', 3),
+(5, '_contact', '98645736500', 3);
 
 -- --------------------------------------------------------
 
@@ -214,9 +233,9 @@ CREATE TABLE `tbl_sub_category` (
 --
 
 INSERT INTO `tbl_sub_category` (`id`, `title`, `slug`, `category`, `icon`, `fields`) VALUES
-(3, 'Cars', 'cars', 17, 'im', 'a:3:{s:5:\"title\";a:9:{i:0;s:4:\"type\";i:1;s:9:\"make year\";i:2;s:10:\"kilometers\";i:3;s:6:\"colour\";i:4;s:9:\"engine CC\";i:5;s:4:\"fuel\";i:6;s:12:\"transmission\";i:7;s:5:\"brand\";i:8;s:8:\"features\";}s:5:\"field\";a:9:{i:0;s:6:\"select\";i:1;s:4:\"text\";i:2;s:4:\"text\";i:3;s:4:\"text\";i:4;s:4:\"text\";i:5;s:5:\"radio\";i:6;s:6:\"select\";i:7;s:4:\"text\";i:8;s:5:\"check\";}s:7:\"choices\";a:9:{i:0;s:97:\"Small Hatchback|Mid Size Hatchback|Sedan|CUV / Compact SUV|Jeep / SUV|Van|Bus|Truck|Pickup|Others\";i:1;s:0:\"\";i:2;s:0:\"\";i:3;s:0:\"\";i:4;s:0:\"\";i:5;s:29:\"Petrol|Diesel|Electric|Hybrid\";i:6;s:81:\"Manual Gear - 2 WD|Manual Gear - 4 WD|Automatic Gear - 2 WD|Automatic Gear - 4 WD\";i:7;s:0:\"\";i:8;s:330:\"Power Window|Power Steering|Central Lock|Alloy Wheels| Keyless Remote Entry|Tubeless Tyres|Air Bags|Anti-lock Braking (ABS)|Air Conditioner - Manual|Air Conditioner - Automatic|Rear AC Vent|Steering Mounted Controls|Projected Headlight|Fog Lights|Electric Side Mirror (ORVM)|Push Engine Start Button|LCD Touchscreen Entertainment \";}}'),
-(4, 'Motorcycle', 'motorcycle', 17, 'im', 'a:3:{s:5:\"title\";a:8:{i:0;s:4:\"type\";i:1;s:15:\"Registered Zone\";i:2;s:6:\"lot no\";i:3;s:9:\"Engine CC\";i:4;s:9:\"Make Year\";i:5;s:16:\"Mileage (km / l)\";i:6;s:10:\"Kilometers\";i:7;s:8:\"Features\";}s:5:\"field\";a:8:{i:0;s:6:\"select\";i:1;s:4:\"text\";i:2;s:4:\"text\";i:3;s:4:\"text\";i:4;s:4:\"text\";i:5;s:4:\"text\";i:6;s:8:\"textarea\";i:7;s:5:\"check\";}s:7:\"choices\";a:8:{i:0;s:35:\"Standard|Cruiser|Sports|Dirt|Scooty\";i:1;s:0:\"\";i:2;s:0:\"\";i:3;s:0:\"\";i:4;s:0:\"\";i:5;s:0:\"\";i:6;s:0:\"\";i:7;s:212:\"Electric Start|Alloy Wheels|Tubeless Tyres|Digital Display Panel|Projected Headlight|LED Tail Light|Front Disc Brake|Rear Disc Brake|Anti-lock Braking (ABS)|Mono Suspension|Split Seat|Low Fuel Indicator|Tripmeter\";}}'),
-(5, 'Parts & Accessories', 'automoblie-parts-accessories', 17, 'im', 'a:3:{s:5:\"title\";a:1:{i:0;s:4:\"type\";}s:5:\"field\";a:1:{i:0;s:6:\"select\";}s:7:\"choices\";a:1:{i:0;s:55:\"Cars Parts & Accessories|Motorcycle Parts & Accessories\";}}');
+(3, 'Cars', 'cars', 17, 'im', 'a:4:{s:5:\"title\";a:9:{i:0;s:4:\"type\";i:1;s:9:\"make year\";i:2;s:10:\"kilometers\";i:3;s:6:\"colour\";i:4;s:9:\"engine CC\";i:5;s:4:\"fuel\";i:6;s:12:\"transmission\";i:7;s:5:\"brand\";i:8;s:8:\"features\";}s:5:\"field\";a:9:{i:0;s:6:\"select\";i:1;s:4:\"text\";i:2;s:4:\"text\";i:3;s:4:\"text\";i:4;s:4:\"text\";i:5;s:5:\"radio\";i:6;s:6:\"select\";i:7;s:4:\"text\";i:8;s:5:\"check\";}s:8:\"required\";a:9:{i:0;s:3:\"yes\";i:1;s:3:\"yes\";i:2;s:3:\"yes\";i:3;s:3:\"yes\";i:4;s:3:\"yes\";i:5;s:3:\"yes\";i:6;s:3:\"yes\";i:7;s:3:\"yes\";i:8;s:3:\"yes\";}s:7:\"choices\";a:9:{i:0;s:97:\"Small Hatchback|Mid Size Hatchback|Sedan|CUV / Compact SUV|Jeep / SUV|Van|Bus|Truck|Pickup|Others\";i:1;s:0:\"\";i:2;s:0:\"\";i:3;s:0:\"\";i:4;s:0:\"\";i:5;s:29:\"Petrol|Diesel|Electric|Hybrid\";i:6;s:81:\"Manual Gear - 2 WD|Manual Gear - 4 WD|Automatic Gear - 2 WD|Automatic Gear - 4 WD\";i:7;s:0:\"\";i:8;s:330:\"Power Window|Power Steering|Central Lock|Alloy Wheels| Keyless Remote Entry|Tubeless Tyres|Air Bags|Anti-lock Braking (ABS)|Air Conditioner - Manual|Air Conditioner - Automatic|Rear AC Vent|Steering Mounted Controls|Projected Headlight|Fog Lights|Electric Side Mirror (ORVM)|Push Engine Start Button|LCD Touchscreen Entertainment \";}}'),
+(4, 'Motorcycle', 'motorcycle', 17, 'im', 'a:4:{s:5:\"title\";a:8:{i:0;s:4:\"type\";i:1;s:15:\"Registered Zone\";i:2;s:6:\"lot no\";i:3;s:9:\"Engine CC\";i:4;s:9:\"Make Year\";i:5;s:16:\"Mileage (km / l)\";i:6;s:10:\"Kilometers\";i:7;s:8:\"Features\";}s:5:\"field\";a:8:{i:0;s:6:\"select\";i:1;s:4:\"text\";i:2;s:4:\"text\";i:3;s:4:\"text\";i:4;s:4:\"text\";i:5;s:4:\"text\";i:6;s:4:\"text\";i:7;s:5:\"check\";}s:8:\"required\";a:8:{i:0;s:3:\"yes\";i:1;s:3:\"yes\";i:2;s:3:\"yes\";i:3;s:3:\"yes\";i:4;s:3:\"yes\";i:5;s:3:\"yes\";i:6;s:3:\"yes\";i:7;s:3:\"yes\";}s:7:\"choices\";a:8:{i:0;s:35:\"Standard|Cruiser|Sports|Dirt|Scooty\";i:1;s:0:\"\";i:2;s:0:\"\";i:3;s:0:\"\";i:4;s:0:\"\";i:5;s:0:\"\";i:6;s:0:\"\";i:7;s:212:\"Electric Start|Alloy Wheels|Tubeless Tyres|Digital Display Panel|Projected Headlight|LED Tail Light|Front Disc Brake|Rear Disc Brake|Anti-lock Braking (ABS)|Mono Suspension|Split Seat|Low Fuel Indicator|Tripmeter\";}}'),
+(5, 'Parts & Accessories', 'automoblie-parts-accessories', 17, 'im', 'a:4:{s:5:\"title\";a:1:{i:0;s:4:\"type\";}s:5:\"field\";a:1:{i:0;s:6:\"select\";}s:8:\"required\";a:1:{i:0;s:3:\"yes\";}s:7:\"choices\";a:1:{i:0;s:55:\"Cars Parts & Accessories|Motorcycle Parts & Accessories\";}}');
 
 -- --------------------------------------------------------
 
@@ -251,8 +270,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$12$D3XAjLOMWYmNhlgUgZzMw.e0uK6KfMCP6u.A6OP6XvkOEXLjvn7s2', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1590422918, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(2, '127.0.0.1', 'sanjay@pcsoftnepal.com', '$2y$10$2RTUVuKZXO5ixipXYJFTMukKwaQNVpFjzHotyPxcsXApUolfIbkva', 'sanjay@pcsoftnepal.com', 'bc930eeeec55a40719ed', '$2y$10$yXZV80rJHU5Gn14k2k5uF.goPAf.D5/EnHJ0XBqVmpeID/VVCVyI.', NULL, NULL, NULL, NULL, NULL, 1590163957, NULL, 0, 'Sanjay', 'Chaudhary', NULL, NULL);
+(1, '127.0.0.1', 'administrator', '$2y$12$D3XAjLOMWYmNhlgUgZzMw.e0uK6KfMCP6u.A6OP6XvkOEXLjvn7s2', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1595004910, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(3, '::1', 'sanjay@pcsoftnepal.com', '$2y$10$fkoKC9kjJ4E37fkWVNYkxeGvv8yRKqfN4Pp3cUXhj59C9xuX9iNpq', 'sanjay@pcsoftnepal.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1594835131, 1595002582, 1, 'Sanjay', 'Chaudhary', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -273,7 +292,7 @@ CREATE TABLE `users_groups` (
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
-(3, 2, 2);
+(4, 3, 2);
 
 --
 -- Indexes for dumped tables
@@ -366,13 +385,13 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_ads`
 --
 ALTER TABLE `tbl_ads`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
@@ -396,7 +415,7 @@ ALTER TABLE `tbl_menus`
 -- AUTO_INCREMENT for table `tbl_meta`
 --
 ALTER TABLE `tbl_meta`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_nepal_location`
@@ -414,13 +433,13 @@ ALTER TABLE `tbl_sub_category`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

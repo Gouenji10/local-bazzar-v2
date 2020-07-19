@@ -27,9 +27,9 @@
                             <i class="la la-tags"></i>
                         </span>
                         <?php 
-                            // $categories = modules::load('category')->get_catgeories();
-                            // $categories = array('0' => 'Select Category') + $categories;
-                            //echo form_dropdown('category',$categories,'',['class'=>'custom-select form-control', 'required'=>'']);
+                            $categories = modules::load('category')->get_catgeories();
+                            $categories = array('0' => 'Select Category') + $categories;
+                            echo form_dropdown('category',$categories,'',['class'=>'custom-select form-control', 'required'=>'']);
                         ?>                        
                     </div>
                 </div>

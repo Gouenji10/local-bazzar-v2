@@ -43,4 +43,14 @@ class Category extends Front_Controller{
             return $list;       
         }
     }
+
+    public function get_single_category($id){
+        $category = $this->category_m->getOne(config('tbl_category'),array('id'=>$id));
+        return $category;
+    }
+
+    public function get_single_sub_category($id){
+        $sub_category = $this->category_m->getOne(config('tbl_sub_category'),array('id'=>$id));
+        return $sub_category;
+    }
 }
