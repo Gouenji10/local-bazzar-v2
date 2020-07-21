@@ -265,9 +265,17 @@ class Home extends Core_Controller
 															echo form_dropdown($titleValue,$drop_down,isset($data)?$data:'',['class'=>'custom-select form-control', 'required'=>'']);
 														}
 													}elseif(isset($choicesValue)){
-														$choices = explode('|',$choicesValue);
-														$drop_down = array('0' => 'Select '.$titleValue) + $choices;
-														echo form_dropdown($titleValue,$drop_down,isset($data)?$data:'',['class'=>'custom-select form-control', 'required'=>'']);
+														$choices = explode('|',$choicesValue);														
+														?>
+														<select name="<?php echo $titleValue;?>" class="custom-select form-control"<?php echo $reqvalue=='yes'?'required=""':'';?>>
+															<option value="">Select option</option>
+															<?php 
+																foreach($choices as $choice){
+																	echo '<option value="'.$choice.'">'.$choice.'</option>';
+																}
+															?>
+														</select>
+
 													}												
 													else{?>
 														<select name="<?php echo $titleValue;?>" class="custom-select form-control"<?php echo $reqvalue=='yes'?'required=""':'';?>>
