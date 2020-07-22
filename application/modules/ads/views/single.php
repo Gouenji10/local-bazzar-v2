@@ -105,10 +105,10 @@
                                                     <span class="title"><?php echo $single_ads['Make_Year'];?></span>
                                                 </li>
                                             <?php endif;?>
-                                            <?php if(isset($single_ads['Mileage_(km_/_l)'])):?>
+                                            <?php if(isset($single_ads['Mileage'])):?>
                                                 <li> 
                                                     <span class="label">Mileage Km/ltr: </span> 
-                                                    <span class="title"><?php echo $single_ads['Mileage_(km_/_l)'];?></span>
+                                                    <span class="title"><?php echo $single_ads['Mileage'];?></span>
                                                 </li>
                                             <?php endif;?>
                                             <?php if(isset($single_ads['Kilometers'])):?>

@@ -44,7 +44,7 @@
                                             <a href="#" class="delete-sub-category" data-id="<?php echo $subcategory['id'] ?>"><i class="la la-close delete"></i></a>
                                         </td>
                                     </tr>
-                                <?php endforeach;?>
+                                <?php $i++;endforeach;?>
                                 
                             </tbody>
                         </table>

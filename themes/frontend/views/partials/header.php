@@ -48,9 +48,9 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="<?php echo base_url();?>">Home</a></li>
                 <li class="nav-item"><a href="#">Browse Ads</a></li>
-                <li class="nav-item"><a href="#">About</a></li>
-                <li class="nav-item"><a href="#">Contact</a></li>           
-                <li class="nav-item"><a href="#">FAQ</a></li>
+                <li class="nav-item"><a href="<?php echo base_url('about');?>">About</a></li>
+                <li class="nav-item"><a href="<?php echo base_url('contact');?>">Contact</a></li>           
+                <li class="nav-item"><a href="<?php echo base_url('faq');?>">FAQ</a></li>
                 <li class="nav-item"><a href="#">Make a Request</a></li>           
             </ul>
             <ul class="nav-menu pull-right account-menu">

@@ -1,2 +1,2 @@
 <?php 
-$config['tbl_']='';
+$config['tbl_custom_fields']='tbl_custom_fields';

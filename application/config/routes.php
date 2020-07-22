@@ -51,7 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['admin/sub-category'] = 'admin/category/sub_category';
-$route['profile/(:num)'] = 'profile/index/$1';
-$route['profile/(:any)'] = 'profile/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['about'] = 'pages/about';
+$route['contact'] = 'pages/contact';
+$route['faq'] = 'pages/faq';
