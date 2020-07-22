@@ -14,12 +14,12 @@
     </div>    
 </div>
 
-<div class="contact-wrapper pt-5" style="background:#fff;">
+<div class="contact-wrapper pt-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
-                <div class="title"><h2>Leave us a message and we will contact you as soon as possible:</h2></div>
-                <form action="">
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <div class="title"><h2>Send Us A Message</h2></div>
+                <form action="" class="mt-5">
                     <?php apply_hook('contact_form');?>
                     <div class="form-group row mb-4 mt-5 text-left submit-row">
                         <div class="col-xl-12">
@@ -29,22 +29,31 @@
                 </form>
                 
             </div>
-            <div class="col-md-4 col-lg-8 col-xs-12 col-sm-12">
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="contact-text col-md-12 col-lg-12 col-xs-12 col-sm-12">
-                <div class="alert alert-success-bordered alert-lg square" role="alert">
-                    We do not buy or sell any product listed on the site. You must contact the seller direcly on their phone number shown in the product page. So kindly DO NOT CALL US if you want to buy any product.<br>
-                    For other issues or inquries, you contact us through:<br>
-                    Hamrobazar.com<br>
-                    Customer Support Center<br>
-                    Kupondole, Lalitpur<br>
-                    Nepal<br>
-                    Phone: 977-9803887576 (10am to 5pm working days)<br>
-                    Email: sanjayshuuya@gmail.com<br>
-                </div>        
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <div class="title"><h2>Information</h2></div>
+                <div class="contact-text mt-5 pt-4">
+                    <ul>
+                        <li>
+                            <i class="la la-paper-plane" aria-hidden="true"></i> 
+                            PO Box 16122 Collins Street West Victoria 8007 Australia
+                        </li>
+                        <li>
+                            <i class="ion ion-speakerphone" aria-hidden="true"></i> 
+                            <a href="tel:+1238884444"> +1238884444</a>
+                        </li>
+                        <li>
+                            <i class="ion ion-email-unread" aria-hidden="true"></i> 
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </li>
+                        <li>
+                            <i class="la la-fax" aria-hidden="true"></i> +1234657890
+                        </li>
+                    </ul>
+                    <p class="small">
+                        We do not buy or sell any product listed on the site. You must contact the seller direcly on their phone number shown in the product page. So kindly DO NOT CALL US if you want to buy any product.
+                    </p>
+                </div>
+                                    
             </div>
         </div>
     </div>

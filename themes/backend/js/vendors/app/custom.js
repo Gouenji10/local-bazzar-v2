@@ -212,6 +212,67 @@ $(document).ready(function(){
 		});
 	});
 
+	/*
+	* jQuery starts for FAQ 
+	*/ 
+	
+	/* Add Sub Category */ 
+	$(document).on('submit','form.faq_form_add',function(){
+		$.post(site_url+'/pages/faq_insert',$('form.faq_form_add').serialize(),function(response){
+			if(response=='success'){
+				notifi('success','FAQ successfully added!')
+				setTimeout(function() {
+				    document.location.reload()
+				},2600);	
+			}else{
+				notifi('error','Failed to add faq!')
+			}
+		});
+		return false;
+	});
+	
+	/*jQuery to add edit view */ 
+	$(document).on('click','.edit-faq',function(){
+		var id=$(this).data('id');
+		$.post(site_url+'/pages/load_edit_faq/'+id,'',function(response){
+			$('.edit-sidebar').find('form').attr('data-id',id);
+			$('.edit-sidebar').find('.edit-view-content').html(response);
+		})
+		return false;
+	});
+
+	/*jQuery to submit edit sub category*/ 
+	$(document).on('submit','form.faq_form_edit',function(){
+		var id= $(this).data('id');
+		$.post(site_url+'/pages/faq_update/'+id,$('form.faq_form_edit').serialize(),function(response){
+			if(response=='success'){
+				notifi('success','Faq successfully edited!')
+				setTimeout(function() {
+				    document.location.reload()
+				},2600);	
+			}else{
+				notifi('error','Failed to update faq!')
+			}
+			
+		});
+		return false;
+	});
+	
+	/*jQuery to delete category*/ 
+	$(document).on('click','.delete-faq',function(){
+		var id = $(this).data('id');
+		$.post(site_url+'/pages/faq_delete/'+id,{},function(response){
+			if(response=='success'){
+				notifi('success','Faq successfully deleted!')
+				setTimeout(function() {
+				    document.location.reload()
+				},2600);	
+			}else{
+				notifi('error','Failed to delete faq!')
+			}
+		});
+	});
+
 });
 
 

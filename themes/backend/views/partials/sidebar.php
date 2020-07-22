@@ -30,6 +30,7 @@
             </ul>
         </li>
         <li><a href="<?php echo base_url('admin/home');?>"><i class="la la-columns"></i><span>Menus</span></a></li>
+        <li <?php echo $page=='faq'?'class="active"':""?>><a href="<?php echo base_url('admin/pages/faq');?>"><i class="la la-columns"></i><span>FAQ</span></a></li>        
     </ul> 
     <span class="heading">Custom Fields</span>
     <ul class="list-unstyled">

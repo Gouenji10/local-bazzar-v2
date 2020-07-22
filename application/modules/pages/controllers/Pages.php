@@ -30,10 +30,11 @@ class Pages extends Front_Controller
 		->build('about');   
     }
     public function faq(){
+        $this->data['faqs']= $this->pages_m->getAll(config('tbl_faq'));
         $this->template
 		->title('FAQ')
 		->set_layout('homepage')
 		->set('page','faq')
-		->build('faq');   
+		->build('faq',$this->data);   
     }
 }

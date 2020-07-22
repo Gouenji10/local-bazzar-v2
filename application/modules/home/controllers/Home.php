@@ -242,7 +242,7 @@ class Home extends Core_Controller
 									<div class="form-group row d-flex align-items-center mb-3">								
 										<div class="col-lg-12">
 											<label class="text-capitalize form-control-label d-flex justify-content-lg-start"><?php echo $titleValue;?> *</label>
-											<textarea class="form-control quill_editor" placeholder="Type your message here ..." rows="12" <?php echo $reqvalue=='yes'?'required':''; ?> name="<?php echo $titleValue;?>"></textarea>
+											<textarea class="form-control quill_editor" placeholder="Type your message here ..." rows="12" <?php echo $reqvalue=='yes'?'required':''; ?> name="<?php echo $titleValue;?>"><?php echo isset($data)?$data:'';?></textarea>
 											<?php if($reqvalue=='yes'):?>
 												<div class="invalid-feedback">
 													Please enter a custom message

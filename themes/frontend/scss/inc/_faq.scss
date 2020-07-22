@@ -1,0 +1,12 @@
+.faq-wrapper{
+    .accordion-icon{
+        &.icon-01{
+            .card-header{
+                &::before{
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    } 
+}
