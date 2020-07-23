@@ -5,6 +5,9 @@ header{
             padding: 10px 0;
             color: $white;
             .list-inline{
+                @media(max-width:767px){
+                    display: none;
+                }
                 li{
                     display: inline-block;
                     i{
@@ -12,20 +15,27 @@ header{
                     }
                 }
             }
-            .header-top-right{
-                a{
-                    color: $white;
+            .sub-top-menu{
+                @media(max-width:767px){
+                    display: flex;
+                    align-content: center;
+                    justify-content: space-around;
+                    flex-direction: row-reverse;
                 }
-            }
-            .roof-social{
-                margin-left: 6px;
-                a{
-                    color:$white;
-                    margin: 0 6px;
+                .header-top-right{
+                    a{
+                        color: $white;
+                    }
                 }
-            }
+                .roof-social{
+                    margin-left: 6px;
+                    a{
+                        color:$white;
+                        margin: 0 6px;
+                    }
+                }
+            }            
         }
-
         .navbar{
             color: $heading-color;
             .navbar-holder{
@@ -44,6 +54,9 @@ header{
                                     font-size: 1rem;  
                                 }
                             }
+                        }
+                        @media(max-width:767px){
+                            display: none;
                         }            
                     }
                     &.account-menu{

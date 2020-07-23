@@ -107,7 +107,6 @@
 <section class="category-section">
     <?php add_action('homepage_category','get_all_category',array('category','hompage_category'),array());?>    
 </section>
-
 <section class="info-section">
 	<div class="container">
 		<div class="row">
@@ -385,6 +384,31 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-subscribes">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="subscribes-inner">
+                    <div class="icon">
+                        <i class="ion ion-paper-airplane"></i>
+                    </div>
+                    <div class="sub-text">
+                        <h3>Subscribe to Newsletter</h3>
+                        <p>and receive new ads in inbox</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <form>
+                    <div class="subscribe">
+                        <input class="form-control" name="EMAIL" placeholder="Enter your Email" required="" type="email">
+                        <button class="btn btn-common" type="submit">Subscribe</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -2,8 +2,8 @@
         <div class="row">
             <h1 class="text-center w-100 title-with-bar">Popular Category</h1>
         </div>
-        <div class="row mt-5">
-            <div class="category-carousel owl-carousel owl-theme">
+        <div class="mt-5">
+            <div class="category-carousel slider">
                 <?php foreach($categories as $category):?>
                         <div class="category-item">
                             <div class="icon">

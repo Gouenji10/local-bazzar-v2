@@ -10,7 +10,7 @@
                     </ul>
 
                 </div>
-                <div class="col-lg-5 col-md-7 col-xs-12">
+                <div class="col-lg-5 col-md-7 col-xs-12 sub-top-menu">
                     <div class="roof-social float-right">
                         <a class="facebook" href="#"><i class="ion ion-social-facebook"></i></a>
                         <a class="twitter" href="#"><i class="ion ion-social-twitter"></i></a>
