@@ -83,12 +83,12 @@
                         <div class="log-in-pop-left">
                             <h1>Hello... <span class="ng-binding"></span></h1>
                             <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                            <h4>Login with social media</h4>
+                            <!-- <h4>Login with social media</h4>
                             <ul>
                                 <li><a href="#"><i class="ti ti-facebook"></i> Facebook</a></li>
                                 <li><a href="#"><i class="la la-google"></i> Google+</a></li>
                                 <li><a href="#"><i class="ti ti-twitter-alt"></i> Twitter</a></li>
-                            </ul>
+                            </ul> -->
                     </div>
                     </div>
                     <div class="col-md-7 col-lg-7">
@@ -152,12 +152,12 @@
                         <div class="log-in-pop-left">
                             <h1>Hello... <span class="ng-binding"></span></h1>
                             <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                            <h4>Login with social media</h4>
+                            <!-- <h4>Login with social media</h4>
                             <ul>
                                 <li><a href="#"><i class="ti ti-facebook"></i> Facebook</a></li>
                                 <li><a href="#"><i class="la la-google"></i> Google+</a></li>
                                 <li><a href="#"><i class="ti ti-twitter-alt"></i> Twitter</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                     <div class="col-md-7 col-lg-7">

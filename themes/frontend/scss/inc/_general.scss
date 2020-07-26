@@ -142,6 +142,7 @@ input[type="submit"].global-btn,
     padding: 16px 28px;
     transition: all ease-in-out 0.3s;
     font-weight: 600 !important;
+    border:none;
     &:hover{
         background-color: $black;
 

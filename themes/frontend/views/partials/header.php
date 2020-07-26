@@ -60,9 +60,40 @@
                     </button>
                 </li>
             </ul>
+            <ul class="moible-menu-drawer pull-right">                    
+                <li class="nav-item"><a href="#off-canvas" class="open-sidebar"><i class="la la-ellipsis-h"></i></a></li>
+            </ul>
             <!-- End Navbar Menu -->
         </div>
         <!-- End Topbar -->
     </nav>
 </header>
+<div class="off-sidebar from-right mobile-menu-sidebar">
+    <div class="off-sidebar-container">
+        <header class="off-sidebar-header">            
+            <a href="#off-canvas" class="off-sidebar-close"></a>
+        </header>
+        <div class="off-sidebar-content offcanvas-scroll auto-scroll">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="<?php echo base_url();?>">Home</a></li>
+                <li class="nav-item"><a href="#">Browse Ads</a></li>
+                <li class="nav-item"><a href="<?php echo base_url('about');?>">About</a></li>
+                <li class="nav-item"><a href="<?php echo base_url('contact');?>">Contact</a></li>           
+                <li class="nav-item"><a href="<?php echo base_url('faq');?>">FAQ</a></li>
+                <li class="nav-item"><a href="#">Make a Request</a></li>           
+            </ul>
+            <ul class="nav-menu account-menu">
+                <li class="nav-item">
+                    <button type="button" class="btn">
+                        <a href="<?php echo base_url('ads');?>"><i class="la la-pencil-square-o"></i> Post an Ad </a>    
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <!-- End Offcanvas Container -->
+    </div>
+    <!-- End Offsidebar Container -->
+</div>
+
+
 

@@ -57,7 +57,7 @@ header{
                         }
                         @media(max-width:767px){
                             display: none;
-                        }            
+                        }                                  
                     }
                     &.account-menu{
                         .btn{
@@ -66,11 +66,59 @@ header{
                             border-radius: 6px;
                             padding: 10px 6px;                            
                         }
-                    }
+                    }                     
                    
+                }
+                .moible-menu-drawer{
+                    display: none;
+                    @media(max-width:767px){
+                        display:block;
+                    }
                 }
             }
         }        
         
     }
+}
+.mobile-menu-sidebar{
+    &.off-sidebar{
+        .off-sidebar-container{
+            width:80%;
+            .off-sidebar-content{
+                height: 100vh !important;
+                ul{
+                    &.nav-menu{
+                        li{
+                            &.nav-item{
+                                display:block;
+                                text-align: center;
+                                a{
+                                    width: 100%;
+                                    padding-top: .25rem;
+                                    padding-bottom: .25rem;
+                                    margin-right: 2rem;
+                                    font-size: 1rem;  
+                                }
+                            }
+                        }                                                   
+                    }
+                    &.account-menu{
+                        margin-top:20px;
+                        .btn{
+                            background-color: $primary-color;
+                            
+                            border-radius: 6px;
+                            padding: 10px 6px;     
+                            a{
+                                color: $white;
+                            }                       
+                        }
+                    }                     
+                   
+                }
+            }
+            
+        }        
+    }
+    
 }
